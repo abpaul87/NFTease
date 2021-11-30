@@ -38,9 +38,9 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:d, :price, :photo, :description, :quantity)
+    params.require(:gallery).permit(:name, :selectors)
   end
-
+  
   def opensea_pull
     url = URI(OPENSEA_ASSET_URL)
     http = Net::HTTP.new(url.host, url.port)
