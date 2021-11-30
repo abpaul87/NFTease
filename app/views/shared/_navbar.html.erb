@@ -10,10 +10,13 @@
         <% if user_signed_in? %>
           <div class="navbar-sign-child-div-all">
             <li class="navbar-design-child-div-all">
-              <%= link_to "Galleries", "#", class: "nav-link" %>
+              <%= link_to "Galleries", "#" %>
             </li>
             <li class="navbar-design-child-div-all">
-              <%= link_to "My Gallery", "#", class: "nav-link" %>
+              <%= link_to "My Gallery", "#" %>
+            </li>
+            <li class="navbar-design-child-div-all">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
             </li>
           </div>
         <% else %>
@@ -26,3 +29,4 @@
       </ul>
   </div>
 </div>
+
