@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  OPENSEA_ASSET = "https://api.opensea.io/api/v1/assets?format=json&limit=20&offset=0&order_direction=desc&owner=0x96ff1d6b5e9ca15f9e61b7e2130599005144fb28"
+  OPENSEA_ASSET_URL = "https://api.opensea.io/api/v1/assets?format=json&limit=20&offset=0&order_direction=desc&owner=0x96ff1d6b5e9ca15f9e61b7e2130599005144fb28"
 
   def index
     @galleries = Gallery.all
@@ -40,9 +40,9 @@ class GalleriesController < ApplicationController
   def gallery_params
     params.require(:gallery).permit(:name, :selectors)
   end
-
+  
   def opensea_pull
-    url = URI(OPENSEA_ASSET)
+    url = URI(OPENSEA_ASSET_URL)
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
     request = Net::HTTP::get(url)

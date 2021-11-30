@@ -10,12 +10,12 @@ class CreateNfts < ActiveRecord::Migration[6.1]
       t.string :artist_name
       t.string :image_url
       t.string :animation_url
-      t.integer :owner_id
+      t.integer :current_owner
       t.json :token_metadata
       t.string :image_url_small
       t.string :opensea_link
       t.references :user, null: false, foreign_key: true
-      t.references :gallery, null: false, foreign_key: true
+      t.references :gallery, null: true, foreign_key: true
 
       t.timestamps
     end
