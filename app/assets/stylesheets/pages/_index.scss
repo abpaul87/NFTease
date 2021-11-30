@@ -4,7 +4,14 @@
 $black-dark: #222222;
 $black-light: #333333;
 
-$gold-dark: #A68549;
-$gold-light: #D0A65B;
+// $gold-dark: #A68549;
+// $gold-light: #D0A65B;
 
 $white: #FBF8EF;
+
+:root{
+  --yellow-dark: #A68549;
+  --yellow-light: #D0A65B;
+
+  --transition1: 0.4s;
+}
