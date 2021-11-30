@@ -2,9 +2,20 @@
 
 // For example:
 $red: #FD1015;
-$blue: #167FFB;
-$yellow: #FFC65A;
+// $blue: #167FFB;
 $orange: #E67E22;
 $green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+// $gray: #0E0000;
+// $light-gray: #F4F4F4;
+
+$black-dark: #222222;
+$black-light: #333333;
+
+$gold-dark: #A68549;
+$gold-light: #D0A65B;
+
+$white: #FBF8EF;
+
+:root{
+  --transition1: 0.4s;
+}

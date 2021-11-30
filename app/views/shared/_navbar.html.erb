@@ -7,8 +7,8 @@
   </div>
   <div class="navbar-design-child-right-div">
     <ul class="navbar-sign-parent-div-all">
+      <div class="navbar-sign-child-div-all">
         <% if user_signed_in? %>
-          <div class="navbar-sign-child-div-all">
             <li class="navbar-design-child-div-all">
               <%= link_to "Galleries", "#" %>
             </li>
@@ -18,15 +18,16 @@
             <li class="navbar-design-child-div-all">
               <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
             </li>
-          </div>
         <% else %>
         <%# replace the piece of code bellow between the <li> tags %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            <%= link_to "Sign-Up", new_user_registration_path, class: "nav-link" %>
+          <li class="navbar-design-child-div-all">
+            <%= link_to "Login", new_user_session_path %>
+          </li>
+          <li class="navbar-design-child-div-all">
+            <%= link_to "Sign-Up", new_user_registration_path %>
           </li>
         <% end %>
+        </div>
       </ul>
   </div>
 </div>
-
