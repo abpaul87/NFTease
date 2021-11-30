@@ -11,3 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+
+body{
+  background: linear-gradient(180deg, $black-dark, $black-light);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

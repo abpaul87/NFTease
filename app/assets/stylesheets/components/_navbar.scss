@@ -1,12 +1,46 @@
-.navbar-lewagon {
+// general disposition and values of the navbar
+.navbar-design-parent-div{
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  position: fixed;
+
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+  padding: 0 20px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+// left content of the navbar
+.navbar-design-child-left-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 80px;
+}
+.navbar-design-child-left-div h2{
+  color: $white;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-design-image{
+  height: 80px;
+  width: 80px;
+
+  margin-right: 20px ;
+}
+
+.navbar-design-image img{
+  height: 100%;
+}
+
+// right content of the navbar
+.navbar-design-child-right-div ul{
+  list-style: none;
+}
+
+// when sign in right items
+.navbar-sign-child-div-all{
+  display: flex;
+  align-items: center;
 }
