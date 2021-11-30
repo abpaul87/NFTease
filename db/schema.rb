@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_145648) do
+ActiveRecord::Schema.define(version: 2021_11_30_175134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_145648) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 
@@ -33,12 +34,12 @@ ActiveRecord::Schema.define(version: 2021_11_30_145648) do
     t.string "artist_name"
     t.string "image_url"
     t.string "animation_url"
-    t.integer "owner_id"
+    t.integer "current_owner"
     t.json "token_metadata"
     t.string "image_url_small"
     t.string "opensea_link"
     t.bigint "user_id", null: false
-    t.bigint "gallery_id", null: false
+    t.bigint "gallery_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["gallery_id"], name: "index_nfts_on_gallery_id"
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_145648) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "fieldname"
+    t.string "wallet"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
