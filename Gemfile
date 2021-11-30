@@ -64,6 +64,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #metamask
-#gem 'omniauth-ethereum'
-#gem "eth", "~> 0.4.16"
-#gem 'omniauth-rails_csrf_protection'
+# gem 'omniauth-ethereum'
+# gem "eth", "~> 0.4.16"
+# gem 'omniauth-rails_csrf_protection'
