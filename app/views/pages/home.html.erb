@@ -1,8 +1,32 @@
 <div class="body-home-div">
-  <div>
-    <div>
-    <h3></h3>
-    <p><>
+  <div class="home-landing-content-div">
+    <div class="content-text-home-landing">
+    <h3>NFTease: The gallery made by enthusiasts for enthusiasts!</h3>
+    <p class="fw-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.</p>
+    <%= link_to "Login", new_user_session_path %>
+    </div>
+    <div style="width: 800px; position: absolute; right:0;">
+    <%= image_tag '/assets/home-body-bg.png' %>
+    </div>
+  </div>
+
+  <div class="home-explaining-content-parent">
+    <div class="home-explaining-content-child">
+      <div class="card-explain-home">
+        <i class="ph-fast-forward-circle"></i>
+        <h2>Fast</h2>
+        <h4>Easy and fast to use</h4>
+      </div>
+      <div class="card-explain-home">
+        <i class="ph-sliders" style="transform: rotate(90deg);"></i>
+        <h2>Customizable</h2>
+        <h4>Customize to your needs</h4>
+      </div>
+      <div class="card-explain-home">
+        <i class="ph-share-network"></i>
+        <h2>Accesible</h2>
+        <h4>Share with your friends and family</h4>
+      </div>
     </div>
   </div>
 </div>

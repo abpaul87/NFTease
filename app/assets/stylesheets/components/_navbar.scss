@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@700&display=swap');
+
 // general disposition and values of the navbar
 .navbar-design-parent-div{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  // position: fixed;
 
   height: 100px;
   width: 100%;
@@ -18,9 +20,10 @@
   justify-content: center;
 
   height: 80px;
-}
-.navbar-design-child-left-div h2{
-  color: $white;
+  h2{
+    color: $white;
+    font-family: 'Kadwa', serif;;
+  }
 }
 
 .navbar-design-image{
@@ -28,11 +31,11 @@
   width: 80px;
 
   margin-right: 20px ;
+  img{
+    height: 100%;
+  }
 }
 
-.navbar-design-image img{
-  height: 100%;
-}
 
 // right content of the navbar
 .navbar-design-child-right-div ul{
@@ -43,25 +46,47 @@
 .navbar-sign-child-div-all{
   display: flex;
   align-items: center;
+  a{
+    margin: 0 15px;
+    padding: 7px 18px;
+
+    color: $gold-light ;
+    background-color: transparent;
+    border: 1px solid $gold-light ;
+    border-radius: 10px;
+
+    transition: var(--transition1);
+  }
+  a:hover{
+    text-decoration: none;
+    border: 1px solid transparent;
+    background-color: $gold-light ;
+    color: $white ;
+    border-radius: 15px;
+  }
 }
 
-.navbar-sign-child-div-all a{
+// when sign out right items
+.navbar-sign-in-child-div-all{
+  display: flex;
+  align-items: center;
+
+  a{
   margin: 0 15px;
   padding: 7px 18px;
 
-  color: var(--yellow-light) ;
+  color: $gold-light ;
   background-color: transparent;
-  border: 1px solid var(--yellow-light) ;
+  border: 1px solid $gold-light ;
   border-radius: 10px;
 
   transition: var(--transition1);
+  }
+  a:hover{
+    text-decoration: none;
+    border: 1px solid transparent;
+    background-color: $gold-light ;
+    color: $white ;
+    border-radius: 15px;
+  }
 }
-
-.navbar-sign-child-div-all a:hover{
-  text-decoration: none;
-  border: 1px solid transparent;
-  background-color: var(--yellow-light) ;
-  color: $white ;
-  border-radius: 15px;
-}
-
