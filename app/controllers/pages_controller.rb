@@ -3,4 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @gallery = Gallery.where(user: current_user)
+  end
+
+  def aboutus
+  end
 end
