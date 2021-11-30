@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_30_175134) do
+ActiveRecord::Schema.define(version: 2021_11_30_190236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_11_30_175134) do
     t.string "artist_name"
     t.string "image_url"
     t.string "animation_url"
-    t.integer "current_owner"
+    t.string "current_owner"
     t.json "token_metadata"
     t.string "image_url_small"
     t.string "opensea_link"
