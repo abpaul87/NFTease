@@ -1,12 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.row {
+.flex-container {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 350px;
-    width: 100%;
+  /*Generates a flexbox layout with default flex direction as row */
+  width: 100%;
+  /* Not really required */
+  align-items: center;
+  /*Aligns contents vertically */
+  justify-content: center;
+  /*Aligns contents horizontally */
+  text-align: center;
+  /*Aligns further text in the center */
   }
 .gal {
     display: table-cell;
