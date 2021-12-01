@@ -53,6 +53,7 @@ response['assets'].each do |asset|
   #   new_nft.save
   # else
     nft = Nft.new(
+      opensea_id: asset['id'],
       token_name: asset['name'],
       token_description: asset['description'],
       collection_name: asset.dig('collection', 'name'),

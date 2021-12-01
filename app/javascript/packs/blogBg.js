@@ -204,7 +204,7 @@ class Point {
     }
   }
   get elasticity() {
-    return this._elasticity || 0.0005;
+    return this._elasticity || 0.001;
   }
   set friction(value) {
     if(typeof value === 'number') {
