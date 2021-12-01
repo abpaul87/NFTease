@@ -10,26 +10,27 @@ class GalleriesController < ApplicationController
     # @nfts = Nft.where(gallery_id: params[:id])
   end
 
-  def new
-    @gallery = Gallery.new
-    @nfts = opensea_pull
-    # @nfts = Nft.where(user: current_user).where(current_owner: current_user.wallet)
-  end
+  # def new
+  #   @gallery = Gallery.new()
+  #   # @nfts = Nft.where(user: current_user).where(current_owner: current_user.wallet)
+  # end
 
-  def create
-    @gallery = Gallery.new(gallery_params)
-    @gallery.user_id = current_user.id
-    # authorize @gallery
-    if @gallery.save
-      redirect_to gallery_path(@gallery)
-    else
-      render :new
-    end
-  end
+  # def create
+  #   @gallery = Gallery.new(gallery_params)
+  #   @gallery.user_id = current_user.id
+  #   # authorize @gallery
+  #   if @gallery.save
+  #     redirect_to gallery_path(@gallery)
+  #   else
+  #     render :new
+  #   end
+  # end
 
   def edit
     @gallery.find(params[:id])
-    @nfts = Nft.where(gallery_id: params[:id])
+    opensea_pull
+    @nfts_owned = Nft.where(user: current_user).where(gallery_id: params[:id])
+    @nfts_nowned = Nft.where(user: current_user).where.not(gallery_id: params[:id])
   end
 
   def update
@@ -55,12 +56,9 @@ class GalleriesController < ApplicationController
     request = Net::HTTP::get(url)
     response = JSON.parse(request)
     response['assets'].each do |asset|
-      if asset['id'] == Nft.where(user: current_user).opensea_id
-        nft = Nft.where(user: current_user).where(opensea_id: asset['id'])
-        new_nft = nft.update(current_owner: asset.dig('owner', 'address'), token_metadata: asset)
-        new_nft.save
-      else
-        nft = Nft.new(
+      if Nft.where(user: current_user).where(opensea_id: asset['id']).empty?
+        nft = Nft.create(
+          opensea_id: asset['id'],
           token_name: asset['name'],
           token_description: asset['description'],
           collection_name: asset.dig('collection', 'name'),
@@ -71,9 +69,13 @@ class GalleriesController < ApplicationController
           current_owner: asset.dig('owner', 'address'),
           token_metadata: asset,
           image_url_small: asset['image_preview_url'],
-          opensea_link: asset['permalink']
+          opensea_link: asset['permalink'],
+          user: current_user
         )
         nft.save
+      else
+        nft = Nft.find_by(user: current_user, opensea_id: asset['id'])
+        nft.update(current_owner: asset.dig('owner', 'address'), token_metadata: asset)
       end
     end
   end
