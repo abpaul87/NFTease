@@ -3,66 +3,72 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding: 30px 0;
 }
 
-.home-landing-content-div{
+// content inside the blob
+.content-text-home-landing-parent{
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content:center;
 
-  margin-top:100px ; //margin on the top  for tbhe home landing infos
-  height: 60vh;
+  height: 100vh;
   width: 95%; //making the width for the div
+  padding-bottom: 70px ;
 
-  img{ // this is the image when landing
-  width: 100%;
-  transform: rotate(20deg);
-  }
-}
-.content-text-home-landing{
-  position: absolute;
-  left: 0;
-  top: 20%;
   z-index: 5;
-  color: $white;
-  width: 51%;
+  // color: #fffb32;
+  width: 50%;
+  text-align: center;
 
   h3{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    max-width: 450px;
+    margin-bottom: 45px;
   }
   p{
   font-size: 1.4rem;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   }
   a{
-    margin-left: 80px;
-    margin-top: 20px;
-    padding: 7px 18px;
+    padding: 4px 18px;
 
-    color: $gold-light ;
+    color: $white ;
     font-size: 20px;
-    background-color: transparent;
+    background-color: $gold-light;
     border: 1px solid $gold-light ;
-    border-radius: 10px;
+    border-radius: 15px;
 
-    transition: var(--transition1);
+    // transition: var(--transition1);
   }
   a:hover{
   text-decoration: none;
-  border: 1px solid transparent;
-  background-color: $gold-light ;
+  border: 1px solid $white;
+  background-color: transparent ;
   color: $white ;
   border-radius: 15px;
   }
 }
 
+// neon text
+.neonText {
+  color: #fff;
+  text-shadow:
+      0 0 7px #e5e500,
+      0 0 10px #e5e500,
+      0 0 21px #e5e500,
+      0 0 42px #ffff00,
+      0 0 82px #ffff00,
+      0 0 92px #ffff00,
+      0 0 102px #ffff00
+}
+
+
 // content explicative on the home page
 // the 3 cards
 .home-explaining-content-parent{ //give the generals values to the div
-  margin: 100px 0 0;
+  margin-top: 100px;
   height: 350px;
   width: 100%;
 }
@@ -86,8 +92,17 @@
   text-align: center;
   background: $black-dark;
   color: $white;
-}
-.card-explain-home i{
-  font-size: 4rem;
-  color: $white ;
+
+  i{
+    font-size: 4rem;
+    color: $white ;
+  }
+  h2{
+    font-size: 2rem;
+  }
+  h4{
+    font-size: 1.2rem ;
+    font-family: $body-font;
+    font-weight: 300;
+  }
 }
