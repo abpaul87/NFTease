@@ -58,7 +58,7 @@
   }
 }
 
-.card-trip {
+.card-nft {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -66,35 +66,35 @@
   transition: transform .3s;
 }
 
-.card-trip:hover {
+.card-nft:hover {
   transform: scale(1.03);
 }
 
-.card-trip a:hover {
+.card-nft a:hover {
   text-decoration: none;
 }
 
-.card-trip > img {
+.card-nft > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-trip h2 {
+.card-nft h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   text-decoration: none;
 }
 
-.card-trip p {
+.card-nft p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-trip .card-trip-infos {
+.card-nft .card-nft-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
