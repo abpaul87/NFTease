@@ -29,8 +29,8 @@ class GalleriesController < ApplicationController
   def edit
     @gallery = Gallery.find(params[:id])
     opensea_pull
-    @nfts_added = Nft.where(user: current_user).where(gallery_id: params[:id])
-    @nfts_available = Nft.where(user: current_user).where.not(gallery_id: params[:id])
+    @nfts_added = Nft.where(user: current_user).where(gallery: @gallery)
+    @nfts_available = current_user.nfts.where(gallery: nil)
   end
 
   def update
