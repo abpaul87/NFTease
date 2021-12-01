@@ -2,7 +2,7 @@ class NftsController < ApplicationController
 
   def show
     @nft = Nft.find(params[:id])
-    @gallery = Gallery.where(id: @nft.gallery_id)
+    @gallery = Gallery.where(params[:gallery_id])
   end
 
   def edit
