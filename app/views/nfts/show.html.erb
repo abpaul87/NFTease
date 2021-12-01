@@ -1,0 +1,27 @@
+<div class = "show_container">
+  <button>Back to Gallery</button>
+  <div class = "show_container_nft_content">
+    <div class = "show_container_nft_imagecontent">
+      <button> leftarrow </button>
+      <div class="nft_image">
+        <%= image_tag @nft.image_url %>
+        <button>likebtn</button>
+      </div>
+    </div>
+    <div class = "show_container_nft_textcontent">
+      <div class = "nft_text">
+        <h2> <%= @nft.token_name %></h2>
+        <h3> <%= @nft.collection_name %></h3>
+        <p> <%= @nft.token_description %></p>
+        <h3> Owned by: </h3>
+        <p> <%= @nft.current_owner %></p>
+        <h3> Created by: </h3>
+        <p> <%= @nft.artist_name %></p>
+        <%= link_to @nft.opensea_link do %>
+          <button>OpenSea</button>
+        <% end %>
+      </div>
+      <button> rightarrow </button>
+    </div>
+  </div>
+</div>
