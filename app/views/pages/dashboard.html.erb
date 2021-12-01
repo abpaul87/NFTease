@@ -2,7 +2,12 @@
   <div class="dash-main-content">
     <div class="current-gallery">
       <h1>Current Gallery</h1>
-      <p><%=@gallery%></p>
+      <%@nfts.each do |nft| %>
+        <img src="<%=nft.image_url_small%>">
+        <p><%=nft.token_name%></p>
+        <p><%=nft.token_description%></p>
+        <p><%=nft.artist_name%></p>
+      <%end%>
     </div>
   </div>
 </div>
