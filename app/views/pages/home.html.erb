@@ -7,7 +7,11 @@
     <div class="content-text-home-landing-parent">
       <h3 class="neonText">NFTease: The gallery made by enthusiasts for enthusiasts!</h3>
       <p class="fw-light neonText">Create a gallery for your NFT in less than 3 minutes for free.</p>
-      <%= link_to "Login", new_user_session_path %>
+      <% if user_signed_in? %>
+        <%= link_to "My Gallery", "#" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
     </div>
 
 
