@@ -40,7 +40,7 @@
     border: 1px solid $gold-light ;
     border-radius: 15px;
 
-    // transition: var(--transition1);
+    transition: var(--transition1);
   }
   a:hover{
   text-decoration: none;
@@ -58,10 +58,7 @@
       0 0 7px #e5e500,
       0 0 10px #e5e500,
       0 0 21px #e5e500,
-      0 0 42px #ffff00,
-      0 0 82px #ffff00,
-      0 0 92px #ffff00,
-      0 0 102px #ffff00
+      0 0 42px #ffff00
 }
 
 
