@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   get "aboutus", to: "pages#aboutus"
   resources :galleries do
-    resources :nfts, only: %i[edit update]
+    resources :nfts, only: %i[show edit update]
   end
-  resources :nfts, only: %i[show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
