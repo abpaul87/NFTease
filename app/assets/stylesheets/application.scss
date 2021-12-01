@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/dashboard";
 
 *{
   box-sizing: border-box;
@@ -22,4 +23,8 @@ body{
   background: linear-gradient(180deg, $black-dark, $black-light);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+:root{
+  --transition1: 0.4s;
 }
