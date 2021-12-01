@@ -29,10 +29,11 @@
         </div>
     </div>
 </div>
-
-   
-    <h1>Trending</h1>
      <body>
+     <h1>Trending</h1>
+     <style>
+        h1{text-align: center;}
+    </style>
         <section class="flex-container">
                 <div class="gal">
                 <% @galleries.each do |galleries| %>
@@ -51,6 +52,7 @@
                     <%end%>
                 </div>
                 <div class="gal">
+                <% @galleries.each do |galleries| %>
                 <a href="/galleries/2">
                     <p>
                     </p><div class="gal-nft">
@@ -63,8 +65,10 @@
                         </div>
                     </div>
                     <p></p>
+                    <%end%>
                 </div>
                 <div class="gal">
+                <% @galleries.each do |galleries| %>
                 <a href="/galleries/3"> 
                     <p>
                     </p><div class="gal-nft">
@@ -77,6 +81,109 @@
                         </div>
                     </div>
                     <p></p>
+                    <%end%>
+                </div>
+            </section>
+    <div class="gal2">
+    <h1>Galleries</h1>
+        <section class="flex-container">
+                <div class="gal">
+                <% @galleries.each do |galleries| %>
+                <a href="/galleries/1">
+                    <p>
+                    </p><div class="gal-nft">
+                        <div class="top-nft">
+                            <img src="assets/sample.jpg" width="200" height="200">  
+                        </div>
+                        <div class="middle" style="float: center;">
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                        </div>
+                    </div>
+                    <p></p>
+                    <%end%>
+                </div>
+                <div class="gal">
+                <% @galleries.each do |galleries| %>
+                <a href="/galleries/2">
+                    <p>
+                    </p><div class="gal-nft">
+                        <div class="top-nft">
+                            <img src="assets/sample.jpg" width="200" height="200">  
+                        </div>
+                        <div class="middle" style="float: center;">
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                        </div>
+                    </div>
+                    <p></p>
+                    <%end%>
+                </div>
+                <div class="gal">
+                <% @galleries.each do |galleries| %>
+                <a href="/galleries/3"> 
+                    <p>
+                    </p><div class="gal-nft">
+                        <div class="top-nft">
+                            <img src="assets/sample.jpg" width="200" height="200">  
+                        </div>
+                        <div class="middle" style="float: center;">
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                        </div>
+                    </div>
+                    <p></p>
+                    <%end%>
+                </div>
+            </section>
+            <section class="flex-container">
+                <div class="gal">
+                <% @galleries.each do |galleries| %>
+                <a href="/galleries/1">
+                    <p>
+                    </p><div class="gal-nft">
+                        <div class="top-nft">
+                            <img src="assets/sample.jpg" width="200" height="200">  
+                        </div>
+                        <div class="middle" style="float: center;">
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                        </div>
+                    </div>
+                    <p></p>
+                    <%end%>
+                </div>
+                <div class="gal">
+                <% @galleries.each do |galleries| %>
+                <a href="/galleries/2">
+                    <p>
+                    </p><div class="gal-nft">
+                        <div class="top-nft">
+                            <img src="assets/sample.jpg" width="200" height="200">  
+                        </div>
+                        <div class="middle" style="float: center;">
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                        </div>
+                    </div>
+                    <p></p>
+                    <%end%>
+                </div>
+                <div class="gal">
+                <% @galleries.each do |galleries| %>
+                <a href="/galleries/3"> 
+                    <p>
+                    </p><div class="gal-nft">
+                        <div class="top-nft">
+                            <img src="assets/sample.jpg" width="200" height="200">  
+                        </div>
+                        <div class="middle" style="float: center;">
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                            <img src="assets/sample.jpg" width="100" height="100">  
+                        </div>
+                    </div>
+                    <p></p>
+                    <%end%>
                 </div>
             </section>
     </body>
