@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @gallery = Gallery.where(user: current_user)
+    @nfts = Nft.where(gallery: @gallery)
   end
 
   def aboutus
