@@ -2,12 +2,24 @@
   <div class="dash-main-content">
     <div class="current-gallery">
       <h1>Current Gallery</h1>
-      <%@nfts.each do |nft| %>
-        <img src="<%=nft.image_url_small%>">
-        <p><%=nft.token_name%></p>
-        <p><%=nft.token_description%></p>
-        <p><%=nft.artist_name%></p>
+
+      <div class="cards">
+      <% @nfts.each do |nft| %>
+          <div class="card-trip">
+            <%# <div id="app">
+              <div class = "cardish animated"> %>
+            <img src="<%=nft.image_url_small%>">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%=truncate(nft.token_name, length: 28)%></h2>
+                <p><%=truncate(nft.collection_name, :length =>50)%></p>
+              </div>
+            </div>
+          </div>
       <%end%>
+    </div>
+
+
     </div>
   </div>
 </div>
