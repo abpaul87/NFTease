@@ -4,22 +4,22 @@
       <h1>Current Gallery</h1>
 
       <div class="cards">
-      <% @nfts.each do |nft| %>
-          <div class="card-nft">
-            <%# <div id="app">
-              <div class = "cardish animated"> %>
-            <img src="<%=nft.image_url_small%>">
-            <div class="card-nft-infos">
-              <div>
-                <h2><%=truncate(nft.token_name, length: 28)%></h2>
-                <p><%=truncate(nft.collection_name, :length =>50)%></p>
+      <% if !@nfts.nil? %>
+        <% @nfts.each do |nft| %>
+            <div class="card-nft">
+              <%# <div id="app">
+                <div class = "cardish animated"> %>
+              <img src="<%=nft.image_url_small%>">
+              <div class="card-nft-infos">
+                <div>
+                  <h2><%=truncate(nft.token_name, length: 28)%></h2>
+                  <p><%=truncate(nft.collection_name, :length =>50)%></p>
+                </div>
               </div>
             </div>
-          </div>
-      <%end%>
+        <%end%>
+      <% end %>
     </div>
-
-
     </div>
   </div>
 </div>
