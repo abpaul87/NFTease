@@ -1,4 +1,4 @@
-<div class = "container_edit">
+<div class = "dash-container">
   <div class = "selector">
   </div>
   <div class = "chosen_items_gallery">
@@ -16,27 +16,24 @@
       <button>View Gallery</button>
     </div>
     <div class="cards">
-      <%@gallery.nfts.each do |nft| %>
-        <%# <%= link_to offer_path() do %>
-          <div class="card-trip">
+      <%@nfts_added.each do |nft| %>
+          <div class="card-nft">
             <%= image_tag nft.image_url_small %>
             <button>remove btn</button>
-            <div class="card-trip-infos">
+            <div class="card-nft-infos">
               <div>
                 <h2><%=truncate(nft.token_name, length: 28)%></h2>
                 <p><%=truncate(nft.token_description, :length =>50)%></p>
               </div>
-              <h3 class="card-trip-artist"><%=truncate(nft.artist_name, length: 8)%></h3>
             </div>
           </div>
-        <%end%>
       <%end%>
     </div>
   </div>
   <div class = "gallerieless_nfts">
     <h2>Select NFTs to Add:</h2>
     <div class="cards">
-      <%@nfts.each do |nft| %>
+      <%@nfts_available.each do |nft| %>
         <%# <%= link_to offer_path() do %>
           <div class="card-trip">
             <%= image_tag nft.image_url_small %>
@@ -51,7 +48,6 @@
               <h3 class="card-trip-artist"><%=truncate(nft.artist_name, length: 8)%></h3>
             </div>
           </div>
-        <%end%>
       <%end%>
     </div>
   </div>
