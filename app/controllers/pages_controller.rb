@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     if Gallery.where(user: current_user).empty?
       @gallery = Gallery.create(name: current_user.wallet, user: current_user)
     else
-      @gallery = Gallery.where(user: current_user)
+      @gallery = Gallery.find_by(user: current_user)
       @nfts = Nft.where(gallery: @gallery)
     end
   end

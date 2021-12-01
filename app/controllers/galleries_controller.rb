@@ -46,7 +46,7 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:name, :selectors)
+    params.require(:gallery).permit(:id, :name, :selectors)
   end
 
   def opensea_pull
