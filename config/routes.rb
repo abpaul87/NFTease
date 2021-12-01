@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard"
   get "aboutus", to: "pages#aboutus"
-  resources :galleries
-  resources :nfts
+  resources :galleries do
+    resources :nfts, only: %i[edit update]
+  end
+  resources :nfts, only: %i[show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

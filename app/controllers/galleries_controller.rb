@@ -20,19 +20,26 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
     @gallery.user_id = current_user.id
     # authorize @gallery
-    # if @gallery.save
-    #   redirect_to ..._path(@gallery)
-    # else
-    #   render :new
-    # end
+    if @gallery.save
+      redirect_to gallery_path(@gallery)
+    else
+      render :new
+    end
   end
 
   def edit
-    @gallery.update(gallery_params)
+    @gallery.find(params[:id])
     @nfts = Nft.where(gallery_id: params[:id])
   end
 
   def update
+    @gallery.update(gallery_params)
+    # authorize @gallery
+    if @gallery.update(gallery_params)
+      redirect_to gallery_path(@gallery)
+    else
+      render :edit
+    end
   end
 
   private
@@ -40,7 +47,7 @@ class GalleriesController < ApplicationController
   def gallery_params
     params.require(:gallery).permit(:name, :selectors)
   end
-  
+
   def opensea_pull
     url = URI(OPENSEA_ASSET_URL)
     http = Net::HTTP.new(url.host, url.port)
@@ -50,7 +57,7 @@ class GalleriesController < ApplicationController
     response['assets'].each do |asset|
       if asset['id'] == Nft.where(user: current_user).opensea_id
         nft = Nft.where(user: current_user).where(opensea_id: asset['id'])
-        new_nft = nft.update(current_owner: asset['owner']['address'], token_metadata: asset)
+        new_nft = nft.update(current_owner: asset.dig('owner', 'address'), token_metadata: asset)
         new_nft.save
       else
         nft = Nft.new(
