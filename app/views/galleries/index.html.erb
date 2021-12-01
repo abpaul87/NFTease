@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="main-content">
+    <div class="content-header">
+      <div class="header-text"><h1>Trending</h1></div>
+      <div class="search-bar">
+      <%= form_tag galleries_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "search-input",
+        placeholder: "NFT's gallore "           
+        %>
+        <%= submit_tag "Search", class: "btn-search" %>
+      <% end %>
+      </div>
+    </div>
+    <div class="cards">
+      <%@galleries.each do |gallery| %>
+        <%= link_to gallery_path(gallery) do %>
+          <div class="gallery">
+            <%# <div id="app">
+              <div class = "cardish animated"> %>
+            <%= cl_image_tag gallery.photo.key.to_s %>
+              <%# </div>
+              <style class="hover"></style>
+              <section class="demo">
+                <div class="carding"></div>
+                <span class="operator">+</span>
+                <div class="carding"><span>color-dodge</span></div>
+                <span class="operator">+</span>
+                <div class="carding"><span>color-dodge</span></div>
+              </section> %>
+            <div class="gallery-infos">
+              <div>
+                <h2><%=truncate(gallery.user_id, length: 28)%></h2>
+                <p><%=truncate(gallery.name, :length =>70)%></p>
+              </div>
+            </div>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+</div>
+
+<#% if policy(Gallery).new? %>
+<#% end %>
