@@ -15,9 +15,9 @@
       </div>
       <button>View Gallery</button>
     </div>
-    <div class="cards itemchosens">
+    <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
-          <div class="card-nft">
+          <div class="card-nft applesauce" data-id="<%= nft.id %>">
             <%= image_tag nft.image_url_small %>
             <%= link_to("Remove",gallery_nft_path(params[:id], nft), method: :patch)%>
             <div class="card-nft-infos">

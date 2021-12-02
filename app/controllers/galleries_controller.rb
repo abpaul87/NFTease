@@ -26,10 +26,20 @@ class GalleriesController < ApplicationController
   #   end
   # end
 
+  def update_order
+    ordered_ids = params[:order].split(',')
+    
+    updates = ordered_ids.map.with_index do |id, index|
+      { gallery_order: index }
+    end
+
+    current_user.nfts.update(ordered_ids, updates)
+  end
+
   def edit
     @gallery = Gallery.find(params[:id])
     opensea_pull
-    @nfts_added = Nft.where(user: current_user).where(gallery: @gallery)
+    @nfts_added = current_user.nfts.where(gallery: @gallery).order(gallery_order: :asc)
     @nfts_available = current_user.nfts.where(gallery: nil)
   end
 
