@@ -21,7 +21,7 @@
 
   height: 80px;
   h2{
-    color: $white;
+    color: $gold-light;
     font-family: 'Kadwa', serif;;
   }
 }
@@ -48,7 +48,9 @@
   align-items: center;
   a{
     margin: 0 15px;
-    padding: 7px 18px;
+    padding: 5px 18px;
+    font-size: 18px;
+    font-weight: 600;
 
     color: $gold-light ;
     background-color: transparent;
