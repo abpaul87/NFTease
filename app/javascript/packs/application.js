@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { init } from './blogBg';
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -24,10 +25,11 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-
+import { initSortable } from '../plugins/init_sortable';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initSortable();
   const landing = document.querySelector('#blob');
 
   if (landing) {
