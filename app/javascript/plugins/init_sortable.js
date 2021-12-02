@@ -3,7 +3,9 @@ import Sortable from 'sortablejs';
 const initSortable = () => {
   console.log('hi');
   const list = document.querySelector('.itemchosens');
-  Sortable.create(list);
+  if (list) {
+    Sortable.create(list);
+  }
 };
 
 export { initSortable };

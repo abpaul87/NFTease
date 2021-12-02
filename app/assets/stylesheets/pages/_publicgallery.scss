@@ -9,12 +9,13 @@
   margin-top: 30px;
 }
 
-.public-cards {
+.public-cards { //// ----------------- this is th emain div of the card
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 16px;
+  grid-gap: 30px;
   text-decoration: none;
   margin-top: 20px;
+  position: relative;
 }
 
 .public-cards a:hover {
@@ -36,7 +37,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 8px;
+  border-radius: 20px;
   transition: transform .3s;
 }
 
