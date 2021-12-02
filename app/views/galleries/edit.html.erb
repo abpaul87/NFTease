@@ -19,9 +19,7 @@
       <%@nfts_added.each do |nft| %>
           <div class="card-nft">
             <%= image_tag nft.image_url_small %>
-            <%= link_to edit_gallery_nft_path(params[:id], nft), method: :put, data: { confirm: "Are you sure?" } do %>
-              <button>remove btn</button>
-            <% end %>
+            <%= link_to("Remove",gallery_nft_path(params[:id], nft), method: :patch)%>
             <div class="card-nft-infos">
               <div>
                 <h2><%=truncate(nft.token_name, length: 28)%></h2>
@@ -39,9 +37,7 @@
         <%# <%= link_to offer_path() do %>
           <div class="card-nft">
             <%= image_tag nft.image_url_small %>
-            <%= link_to gallery_nft_path(params[:id], nft), method: :patch, data: { confirm: "Are you sure?" } do %>
-              <button>add btn</button>
-            <% end %>
+            <%= link_to("Add To Gallery",gallery_nft_path(params[:id], nft), method: :patch) %>
             <div class="card-nft-infos">
               <div>
                 <h2><%=truncate(nft.token_name, length: 28)%></h2>
