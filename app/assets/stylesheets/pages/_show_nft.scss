@@ -28,6 +28,7 @@
   align-items: center;
 
   height: fit-content;
+  width: inherit;
 
   background: linear-gradient(to bottom, $show-card-top, $show-card-bottom);
   border-radius: 20px;
@@ -50,7 +51,7 @@
   font-size: 15px;
   font-family: 'VT323', monospace;
   color: $black-dark;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in;
     i{
     color: $black-dark;
     font-size: 15px;
