@@ -8,7 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { init } from './blogBg';
-
+import { copyingText } from './shareBtn';
 
 Rails.start()
 Turbolinks.start()
@@ -30,9 +30,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initSortable();
-
+  copyingText();
   const landing = document.querySelector('#blob');
-
   if (landing) {
     init();
   }

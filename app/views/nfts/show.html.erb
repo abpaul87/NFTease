@@ -1,5 +1,5 @@
 <div class = "show_container">
-    <%= link_to gallery_path(params[:gallery_id]) do %>
+    <%= link_to gallery_path(@gallery) do %>
       <button id="back_button"><i class="fas fa-arrow-left"></i>Back to Gallery</button>
     <% end %>
 
@@ -23,10 +23,10 @@
         <h3  id="p-content-h3"> Created by: </h3>
         <p> <%= @nft.artist_name %></p>
         <div id="buttons-OS-S-bottom">
-          <%= link_to @nft.opensea_link do %>
+          <%= link_to @nft.opensea_link, target:"_blank" do %>
             <button>OpenSea</button>
           <% end %>
-            <button>Share</button>
+            <button data-url="<%= @base_url %><%= gallery_nft_path(@gallery, @nft) %>" id="shareButtonShow">Share</button>
         </div>
       </div>
     </div>
