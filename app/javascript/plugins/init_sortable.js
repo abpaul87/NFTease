@@ -1,18 +1,21 @@
 import Sortable from 'sortablejs';
+import Rails from '@rails/ujs';
 
 const initSortable = () => {
-  console.log('hi');
   const list = document.querySelector('.itemchosens');
-  Sortable.create(list);
+  const sortable = Sortable.create(list, {
+    onEnd: () => {
+      const order = { order: sortable.toArray() };
+
+      Rails.ajax({
+        url:  list.dataset.updateOrderUrl,
+        type: "PATCH",
+        data: new URLSearchParams(order).toString(),
+        success: function(data) {},
+        error: function(data) {}
+      })
+    }
+  });
 };
 
 export { initSortable };
-
-// import { fetchNFTs, updateResultsList } from './nfts';
-// import { initSortable } from './plugins/init_sortable'; // <-- add this
-
-// fetchNFTs('');
-// initSortable(); // <-- add this
-
-// const form = document.querySelector('#search-form');
-// form.addEventListener('edit', updateResultsList);
