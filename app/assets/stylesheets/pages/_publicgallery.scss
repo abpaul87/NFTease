@@ -1,0 +1,80 @@
+.public-gallery-container {
+  width:95%;
+  max-width: 800px;
+  color: white;
+  margin:auto;
+}
+
+.dash-main-content {
+  margin-top: 30px;
+}
+
+.public-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.public-cards a:hover {
+  text-decoration: none;
+}
+
+.public-cards a {
+  text-decoration: none;
+}
+
+.public-main-content {
+  padding-top: 25px;
+  margin-bottom: 40px;
+}
+
+
+
+.public-card-nft {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  transition: transform .3s;
+}
+
+.public-card-nft:hover {
+  transform: scale(1.03);
+}
+
+.public-card-nft a:hover {
+  text-decoration: none;
+}
+
+.public-card-nft > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.public-card-nft h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.public-card-nft p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.public-card-nft .public-card-nft-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  text-decoration: none;
+  color: gray;
+  height: 80px;
+}
