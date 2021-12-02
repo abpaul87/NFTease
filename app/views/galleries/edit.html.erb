@@ -13,6 +13,7 @@
       <%=link_to gallery_path(@gallery) do %>
         <button>View Public Gallery</button>
       <% end %>
+      <%=Rails.root.join(gallery_path)%>
     </div>
     <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
