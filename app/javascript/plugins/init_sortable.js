@@ -1,8 +1,18 @@
 import Sortable from 'sortablejs';
 
 const initSortable = () => {
-  const list = document.querySelector('#results');
+  console.log('hi');
+  const list = document.querySelector('.itemchosens');
   Sortable.create(list);
 };
 
 export { initSortable };
+
+// import { fetchNFTs, updateResultsList } from './nfts';
+// import { initSortable } from './plugins/init_sortable'; // <-- add this
+
+// fetchNFTs('');
+// initSortable(); // <-- add this
+
+// const form = document.querySelector('#search-form');
+// form.addEventListener('edit', updateResultsList);
