@@ -53,12 +53,12 @@
 
 // neon text
 .neonText {
-  color: #fff;
+  color: rgb(255, 240, 228);
   text-shadow:
-      0 0 7px #e5e500,
-      0 0 10px #e5e500,
-      0 0 21px #e5e500,
-      0 0 42px #ffff00
+      0 0 5px $neon-light,
+      0 0 10px $neon-light,
+      0 0 15px $neon-light,
+      0 0 25px $neon-light
 }
 
 
