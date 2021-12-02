@@ -11,10 +11,16 @@ class NftsController < ApplicationController
 
   def update
     @nft = Nft.find(params[:id])
-    if @nft.update(gallery_id: params[:gallery_id])
-      redirect_to gallery_path(params[:gallery_id])
-    else
-      render :edit
-    end
+    @nft.update(gallery_id: params[:gallery_id])
+    redirect_to edit_gallery_path(params[:gallery_id])
+  end
+
+  def remove_gala
+    @nft = Nft.find(params[:id])
+  end
+
+  def confirm_gala
+    @nft = Nft.find(params[:id])
+    @nft.update(gallery_id: "")
   end
 end
