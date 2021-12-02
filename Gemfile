@@ -67,3 +67,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'omniauth-ethereum'
 # gem "eth", "~> 0.4.16"
 # gem 'omniauth-rails_csrf_protection'
+gem 'sortablejs-rails'

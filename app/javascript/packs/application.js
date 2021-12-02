@@ -12,7 +12,7 @@ import { init } from './blogBg';
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+//= require sortable.min
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
