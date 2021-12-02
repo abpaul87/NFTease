@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show_nft";
 
 .flex-container {
     display: flex;
@@ -27,7 +28,7 @@
 .gal a:hover {
     text-decoration: none;
   }
-  
+
 .top {
     display: flex;
     margin: 0 15px;
