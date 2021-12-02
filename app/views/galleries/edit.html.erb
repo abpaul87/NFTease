@@ -2,18 +2,17 @@
   <div class = "selector">
   </div>
   <div class = "chosen_items_gallery">
-    <div class = "edit_name_content">
-      <div class = "edit_name_text_content">
-        <h2>
-          <% if @gallery.name.nil? %>
-            <%= truncate(current_owner.wallet, length: 13)%>
-          <% else %>
-            <%= @gallery.name%>
-          <% end %>
-        </h2>
+    <div class = "">
+            <%= simple_form_for @gallery, html: { class: ""} do |f| %>
+            <%= f.input :name, :label => "Gallery Name" %>
+            <button type="button" class="">
+              <%= f.button :submit, "Update Name"%>
+            </button>
+            <% end %>
         <button>Gearicon</button>
-      </div>
-      <button>View Gallery</button>
+      <%=link_to gallery_path(@gallery) do %>
+        <button>View Public Gallery</button>
+      <% end %>
     </div>
     <div class="cards itemchosens">
       <%@nfts_added.each do |nft| %>
@@ -43,7 +42,6 @@
                 <h2><%=truncate(nft.token_name, length: 28)%></h2>
                 <p><%=truncate(nft.token_description, :length =>50)%></p>
               </div>
-              <h3 class="card-nft-artist"><%=truncate(nft.artist_name, length: 8)%></h3>
             </div>
           </div>
       <%end%>
