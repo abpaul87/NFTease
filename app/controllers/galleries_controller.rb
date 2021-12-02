@@ -7,7 +7,7 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
-    @nfts = Nft.where(gallery: @gallery)
+    @nfts = Nft.where(gallery: @gallery).sort_by(:gallery_order)
   end
 
   # def new
@@ -26,18 +26,29 @@ class GalleriesController < ApplicationController
   #   end
   # end
 
+  def update_order
+    ordered_ids = params[:order].split(',')
+    
+    updates = ordered_ids.map.with_index do |id, index|
+      { gallery_order: index }
+    end
+
+    current_user.nfts.update(ordered_ids, updates)
+  end
+
   def edit
     @gallery = Gallery.find(params[:id])
     opensea_pull
-    @nfts_added = Nft.where(user: current_user).where(gallery: @gallery)
+    @nfts_added = current_user.nfts.where(gallery: @gallery).order(gallery_order: :asc)
     @nfts_available = current_user.nfts.where(gallery: nil)
   end
 
   def update
+    @gallery = Gallery.find(params[:id])
     @gallery.update(gallery_params)
     # authorize @gallery
     if @gallery.update(gallery_params)
-      redirect_to gallery_path(@gallery)
+      redirect_to edit_gallery_path(@gallery)
     else
       render :edit
     end
@@ -46,7 +57,7 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:id, :name, :selectors)
+    params.require(:gallery).permit(:name)
   end
 
   def opensea_pull
