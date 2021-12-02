@@ -7,7 +7,7 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
-    @nfts = Nft.where(gallery: @gallery)
+    @nfts = Nft.where(gallery: @gallery).sort_by(:gallery_order)
   end
 
   # def new
