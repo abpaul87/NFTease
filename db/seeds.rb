@@ -14,6 +14,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 
+puts 'starting deletion'
 Nft.delete_all
 Gallery.delete_all
 User.delete_all
