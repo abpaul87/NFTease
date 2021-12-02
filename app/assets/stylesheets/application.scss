@@ -23,7 +23,21 @@ body{
   background: linear-gradient(180deg, $black-b, $black-light);
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: overlay;
 }
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: $gold-light;
+}
+
 
 :root{
   --transition1: 0.4s;

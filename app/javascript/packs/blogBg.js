@@ -86,7 +86,7 @@ class Blob {
     this._color = value;
   }
   get color() {
-    return this._color || '#303030';
+    return this._color || '#3d3a35';
   }
 
   set canvas(value) {
@@ -114,7 +114,7 @@ class Blob {
     }
   }
   get radius() {
-    return 340;
+    return 300;
   }
 
   set position(value) {
