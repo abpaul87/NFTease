@@ -34,10 +34,11 @@ class GalleriesController < ApplicationController
   end
 
   def update
+    @gallery = Gallery.find(params[:id])
     @gallery.update(gallery_params)
     # authorize @gallery
     if @gallery.update(gallery_params)
-      redirect_to gallery_path(@gallery)
+      redirect_to edit_gallery_path(@gallery)
     else
       render :edit
     end
@@ -46,7 +47,7 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:id, :name, :selectors)
+    params.require(:gallery).permit(:name)
   end
 
   def opensea_pull
