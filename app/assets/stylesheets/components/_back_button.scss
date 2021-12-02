@@ -1,0 +1,21 @@
+#back_button{
+  position: absolute;
+  left: 5%;
+  border: 0;
+  background: transparent;
+  color: $white;
+  font-size: 18px;
+
+  transition: 0.3s;
+
+  i{
+    margin-right: 10px;
+    color: $gold-light;
+  }
+}
+#back_button{
+  i:hover{
+    margin-left: 20px;
+  }
+}
+
