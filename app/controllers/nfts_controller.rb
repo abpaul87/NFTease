@@ -3,6 +3,14 @@ class NftsController < ApplicationController
   def show
     @nft = Nft.find(params[:id])
     @gallery = Gallery.find(params[:gallery_id])
+    @base_url = request.base_url
+    #@current_nft = Nft.find(params[:id])
+    #@prev = @current_nft.previous
+    #@next = @current_nft.next
+  
+    #respond_to do |format|
+      #format.html
+    #end
   end
 
   def edit

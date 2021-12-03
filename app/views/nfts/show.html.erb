@@ -4,7 +4,11 @@
     <% end %>
 
   <div class = "parent_show_container_nft_content">
-  <i class="fas fa-chevron-left"></i>
+    <% unless @nft.previous.nil? %>
+    <%= link_to gallery_nft_path(@gallery.id, @nft.previous.id) do %>
+    <i class="fas fa-chevron-left" ></i>
+    <% end %>
+    <% end %>
 
   <div class = "show_container_nft_content">
     <div class = "show_container_nft_imagecontent">
@@ -34,7 +38,10 @@
       </div>
     </div>
     </div>
-
-    <i class="fas fa-chevron-right"></i>
+    <% unless @nft.next.nil? %>
+    <%= link_to gallery_nft_path(@gallery.id, @nft.next.id) do %>
+    <i class="fas fa-chevron-right" ></i>
+    <% end %>
+    <% end %>
   </div>
 </div>
