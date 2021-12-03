@@ -9,13 +9,16 @@
   margin-top: 30px;
 }
 
-.public-cards { //// ----------------- this is th emain div of the card
+.public-cards { //// ----------------- this is the main div of the card
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 30px;
+  grid-template-columns: auto;
+  grid-gap: 75px;
+  justify-content: center;
+
   text-decoration: none;
   margin-top: 20px;
-  position: relative;
+  margin-bottom: 100px;
 }
 
 .public-cards a:hover {
@@ -34,11 +37,14 @@
 
 
 .public-card-nft {
-  overflow: hidden;
-  background: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
   transition: transform .3s;
+  width: 120%;
 }
 
 .public-card-nft:hover {
@@ -53,6 +59,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .public-card-nft h2 {
@@ -68,14 +75,29 @@
   margin: 0;
 }
 
-
-.public-card-nft .public-card-nft-infos {
-  padding: 16px;
+.public-card-nft-infos{
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  position: relative;
+
+  bottom: -7%;
+  margin: 0 auto;
+  background: $white;
+  border-radius: 20px;
+
+
+  padding: 8px 15px;
   text-decoration: none;
   color: gray;
-  height: 80px;
+  height: 70px;
+  width: 70%;
+}
+.public-card-nft-infos{
+  h2{
+    color: $black-dark;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-family: 'VT323', monospace;
+  }
 }

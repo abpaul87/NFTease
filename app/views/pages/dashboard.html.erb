@@ -2,7 +2,11 @@
   <div class="dash-main-content">
     <div class="current-gallery">
       <h1><%=@gallery.name%></h1>
-      <%=link_to('Edit', edit_gallery_path(@gallery))%>
+      <div class="current-gallery-edit-button">
+        <%=link_to edit_gallery_path(@gallery) do%>
+        <div class="current-gallery-edit-button-div"><h2>Edit</h2><i class="fas fa-cog"></i><i class="fas fa-cog fa-cog02"></i></div>
+        <% end %>
+      </div>
       <div class="cards">
         <% if !@nfts.nil? %>
           <% @nfts.each do |nft| %>

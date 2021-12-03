@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@700&display=swap');
 
 // general disposition and values of the navbar
 .navbar-design-parent-div{
@@ -38,6 +37,9 @@
 
 
 // right content of the navbar
+.navbar-sign-parent-div-all{
+  margin: 0;
+}
 .navbar-design-child-right-div ul{
   list-style: none;
 }
