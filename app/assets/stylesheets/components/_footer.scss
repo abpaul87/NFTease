@@ -1,0 +1,49 @@
+.this-the-div-for-the-footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 100px;
+
+  background-color: #333;
+}
+
+
+.this-is-the-about-us-page a{
+  color: $white;
+  font-size: 25px;
+  font-family: 'VT323', monospace;
+}
+
+
+.footer-main-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1{
+    color: $white;
+    font-size: 25px;
+  }
+  h2{
+    color: $white;
+    font-size: 20px;
+  }
+}
+
+
+.logo-footer-main-div{
+  display: flex;
+  align-items: center;
+
+  color: $white;
+
+  margin: 10px;
+  font-size: 20px;
+
+  i{
+    margin: 0 20px;
+  }
+}
