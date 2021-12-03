@@ -9,7 +9,7 @@ const initSortable = () => {
   }
 
   const sortable = Sortable.create(list, {
-    onEnd: () => {
+    onEnd: (evt) => {
       const order = { order: sortable.toArray() };
 
       Rails.ajax({
