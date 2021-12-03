@@ -1,4 +1,6 @@
 import copy from 'copy-to-clipboard';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 
 export const copyingText = () =>{
   const copyBtn = document.querySelector("#shareButtonShow")
@@ -10,5 +12,8 @@ export const copyingText = () =>{
         debug: true,
         message: 'Copied',
       });
+    tippy("#shareButtonShow", {
+      content: 'My tooltip!',
+    });
   });
   }
