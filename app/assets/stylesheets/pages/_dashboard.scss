@@ -1,8 +1,9 @@
 .dash-container {
   width:95%;
-  max-width: 1000px;
+  max-width: 1200px;
   color: white;
   margin:auto;
+  margin-bottom: 100px;
 }
 
 .dash-main-content {
@@ -11,8 +12,9 @@
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+  grid-row-gap: 60px;
   text-decoration: none;
   margin-top: 20px;
 }
@@ -22,8 +24,60 @@
 }
 
 .cards a {
-  text-decoration: none;
+  .fa-times{
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    right: -5%;
+    top: -5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cc0000;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  .fa-plus{
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    right: -5%;
+    top: -5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $gold-light;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
 }
+.cards a:hover {
+  .fa-times{
+    transform: scale(1.14);
+    color: black;
+  }
+  .fa-plus{
+    transform: scale(1.14);
+    color: black;
+  }
+}
+.cards a:active{
+  .fa-times{
+    background-color: $white;
+    transform: scale(5)
+  }
+  .fa-plus{
+    background-color: $white;
+    transform: scale(5)
+  }
+}
+
 
 .main-content {
   padding-top: 25px;
@@ -47,27 +101,24 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 .card-nft {
-  overflow: hidden;
-  background: white;
+  position: relative;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 8px;
+  border-radius: 20px;
   transition: transform .3s;
-}
-
-.card-nft:hover {
-  transform: scale(1.03);
+  display: flex;
+  justify-content: center;
 }
 
 .card-nft a:hover {
@@ -78,6 +129,7 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  border-radius: 20px;
 }
 
 .card-nft h2 {
@@ -95,12 +147,19 @@
 
 
 .card-nft .card-nft-infos {
-  padding: 16px;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  position: relative;
+
+  background: $white;
+  height: 60px;
+  width: 90%;
+  padding:2px 15px;
+  border-radius: 20px;
+
+  bottom: -12%;
+
   text-decoration: none;
-  color: gray;
-  height: 80px;
+  color: $black-dark;
 }
