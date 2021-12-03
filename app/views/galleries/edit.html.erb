@@ -1,19 +1,21 @@
 <div class = "dash-container">
   <div class = "selector">
   </div>
-  <div class = "chosen_items_gallery" style="margin-bottom: 70px;">
-    <div class = "">
-            <%= simple_form_for @gallery, html: { class: ""} do |f| %>
-            <%= f.input :name, :label => "Gallery Name" %>
-            <button type="button" class="">
-              <%= f.button :submit, "Update Name"%>
-            </button>
-            <% end %>
-        <button>Gearicon</button>
+      <h2 style="text-align: center;"><%= @gallery.name %></h2>
+  <div class = "chosen_items_gallery" style="margin-bottom: 40px;">
+    <div class = "top-edit-optioins">
+        <%= simple_form_for @gallery, html: { class: "text-input-filed-edit"} do |f| %>
+          <%= f.input :name, label: false, class: "form-inline",:input_html => { :size => 100, :maxlength => 100 }%>
+          <button type="button" class="actions_change_name_edit">
+            <%= f.button :submit, "Update Name"%>
+          </button>
+        <% end %>
+      </div>
+      <div class="view-gallery-button-edit">
       <%=link_to gallery_path(@gallery) do %>
         <button>View Public Gallery</button>
       <% end %>
-      <%=Rails.root.join(gallery_path)%>
+      </div>
     </div>
     <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
@@ -33,8 +35,8 @@
     </div>
   </div>
   <div class = "gallerieless_nfts">
-    <h2>Select NFTs to Add:</h2>
-    <div class="cards">
+    <h2 class="title-add-select-nft-china">Select NFTs to Add:</h2>
+    <div class="cards" style="margin: auto;">
       <%@nfts_available.each do |nft| %>
         <%# <%= link_to offer_path() do %>
           <div class="card-nft">
