@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  OPENSEA_ASSET_URL = "https://api.opensea.io/api/v1/assets?format=json&limit=30&offset=0&order_direction=desc&owner="
+  OPENSEA_ASSET_URL = "https://api.opensea.io/api/v1/assets?format=json&limit=50&offset=0&order_direction=asc&owner="
 
   def index
     @galleries = Gallery.all
@@ -75,11 +75,11 @@ class GalleriesController < ApplicationController
           collection_name: asset.dig('collection', 'name'),
           collection_description: asset.dig('collection', 'description'),
           artist_name: asset.dig('creator', 'user', 'username') || asset.dig('collection', 'name'),
-          image_url: asset['image_original_url'] || asset['image_url'],
+          image_url: asset['image_original_url'] || asset['image_url'] || "https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png",
           animation_url: asset['animation_original_url'],
           current_owner: asset.dig('owner', 'address'),
           token_metadata: asset,
-          image_url_small: asset['image_preview_url'],
+          image_url_small: asset['image_preview_url'] || "https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png",
           opensea_link: asset['permalink'],
           user: current_user
         )

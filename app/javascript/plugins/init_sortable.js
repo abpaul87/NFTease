@@ -3,6 +3,11 @@ import Rails from '@rails/ujs';
 
 const initSortable = () => {
   const list = document.querySelector('.itemchosens');
+
+  if (!list) {
+    return;
+  }
+
   const sortable = Sortable.create(list, {
     onEnd: (evt) => {
       const order = { order: sortable.toArray() };

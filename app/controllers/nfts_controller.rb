@@ -4,6 +4,13 @@ class NftsController < ApplicationController
     @nft = Nft.find(params[:id])
     @gallery = Gallery.find(params[:gallery_id])
     @base_url = request.base_url
+    #@current_nft = Nft.find(params[:id])
+    #@prev = @current_nft.previous
+    #@next = @current_nft.next
+  
+    #respond_to do |format|
+      #format.html
+    #end
   end
 
   def edit
@@ -12,10 +19,12 @@ class NftsController < ApplicationController
 
   def update
     @nft = Nft.find(params[:id])
+    @nftes = Nft.where(gallery_id: params[:gallery_id])
+    count = @nftes.length
     if @nft.gallery_id.nil?
-      @nft.update(gallery_id: params[:gallery_id])
+      @nft.update(gallery_id: params[:gallery_id], gallery_order: count)
     else
-      @nft.update(gallery_id: nil)
+      @nft.update(gallery_id: nil, gallery_order: nil)
     end
     redirect_to edit_gallery_path(params[:gallery_id])
   end

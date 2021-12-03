@@ -1,17 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 require 'open-uri'
 
 puts 'starting deletion'
@@ -20,39 +9,105 @@ Gallery.delete_all
 User.delete_all
 puts "deleting..."
 
-new_user = User.create(
-    email: 'test@test.com',
-    password: 'test1234',
-    wallet: '0x96ff1d6b5e9ca15f9e61b7e2130599005144fb28'
-  )
-new_user.save
+new_user1 = User.create(
+  email: 'test1@test.com',
+  password: 'test1234',
+  wallet: '0x96ff1d6b5e9ca15f9e61b7e2130599005144fb28'
+)
+new_user1.save
+
+new_user2 = User.create(
+  email: 'test2@test.com',
+  password: 'test1234',
+  wallet: '0x0f0eae91990140c560d4156db4f00c854dc8f09e'
+)
+new_user2.save
+
+new_user3 = User.create(
+  email: 'test3@test.com',
+  password: 'test1234',
+  wallet: '0x88d3574660711e03196af8a96f268697590000fa'
+)
+new_user3.save
+
+new_user4 = User.create(
+  email: 'test4@test.com',
+  password: 'test1234',
+  wallet: '0xd6406c9838e1423d14a6dfc1bfd6a1c307608da3'
+)
+new_user4.save
+
+new_user5 = User.create(
+  email: 'test5@test.com',
+  password: 'test1234',
+  wallet: '0x3295df41a2f288da03818ae32565e1599f1b2eee'
+)
+new_user5.save
+
+new_user6 = User.create(
+  email: 'test6@test.com',
+  password: 'test1234',
+  wallet: '0xebf229e55270dfd60fa6b104a1adc187ac8be43b'
+)
+new_user6.save
+
+new_user7 = User.create(
+  email: 'test7@test.com',
+  password: 'test1234',
+  wallet: '0xdda8c71017afde4c65e7bcfbd4864ce613dc8e7c'
+)
+new_user7.save
+
+new_user8 = User.create(
+  email: 'test8@test.com',
+  password: 'test1234',
+  wallet: '0xfd22004806a6846ea67ad883356be810f0428793'
+)
+new_user8.save
+
+new_user9 = User.create(
+  email: 'test9@test.com',
+  password: 'test1234',
+  wallet: '0xc46db2d89327d4c41eb81c43ed5e3dff111f9a8f'
+)
+new_user9.save
+
+new_user10 = User.create(
+  email: 'test10@test.com',
+  password: 'test1234',
+  wallet: '0x8dbbca57ea56290efa14d835bbfd34faf1d89753'
+)
+new_user10.save
+
 puts "Completing users..."
-puts new_user
 
 puts "starting gallery creation..."
 
-gallery = Gallery.new(
-  user: new_user,
-  name: new_user.wallet,
-  selectors: {sdff: "dafds", erew: "eiwore"}
-)
-gallery.save
-puts "finished gallery creation..."
-puts gallery
+# gallery = Gallery.new(
+#   user: new_user,
+#   name: new_user.wallet
+# )
+# gallery.save
+# puts "finished gallery creation..."
+# puts gallery
+
+users = User.all
 
 puts 'Starting openseas api call...'
 
-url = URI('https://api.opensea.io/api/v1/assets?format=json&limit=20&offset=0&order_direction=desc&owner=0x96ff1d6b5e9ca15f9e61b7e2130599005144fb28')
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-request = Net::HTTP::get(url)
-response = JSON.parse(request)
-response['assets'].each do |asset|
-  # if asset['id'] == Nft.where(user: new_user).opensea_id
-  #   nft = Nft.where(user: new_user).where(opensea_id: asset['id'])
-  #   new_nft = nft.update(current_owner: asset.dig('owner', 'address'), token_metadata: asset)
-  #   new_nft.save
-  # else
+users.each do |user|
+  gallery = Gallery.new(
+    user: user,
+    name: user.wallet
+  )
+  gallery.save
+  url = URI("https://api.opensea.io/api/v1/assets?format=json&limit=20&offset=0&order_direction=asc&owner=#{user.wallet}")
+  http = Net::HTTP.new(url.host, url.port)
+  http.use_ssl = true
+  request = Net::HTTP::get(url)
+  response = JSON.parse(request)
+  order = 1
+  response['assets'].each do |asset|
     nft = Nft.new(
       opensea_id: asset['id'],
       token_name: asset['name'],
@@ -67,38 +122,12 @@ response['assets'].each do |asset|
       image_url_small: asset['image_preview_url'],
       opensea_link: asset['permalink'],
       gallery: gallery,
-      user: new_user
+      user: user,
+      gallery_order: order
     )
     nft.save
-  # end
+    order += 1
+  end
 end
 
 puts 'Finished OpenSea API Call...'
-
-# puts nft
-
-# User.all.each do |user|
-#   2.times do
-#     offers = Offer.create(
-#       item_name: Faker::Movie.title,
-#       price: rand(5..20),
-#       description: Faker::Lorem.paragraph,
-#       image_url: "https://lorempixel.com/800/400/sports/#{rand(1..10)}/",
-#       quantity: rand(1..5),
-#       user_id: user.id
-#     )
-#     offers.save
-#   end
-# end
-# users = User.all
-
-# offer = Offer.create(
-#       item_name: "Pizza Pouch",
-#       price: 9.5,
-#       description: "Ever need to carry a slice of pizza, but your hands are already occupied by another slice and a beer? This is the product for you.",
-#       quantity: rand(1..5),
-#       user_id: users.sample.id
-#     )
-# file = URI.open('https://images.firstwefeast.com/complex/image/upload/f_auto,fl_lossy,q_auto,w_1200/bmhtyz69tr7xoqphpyrj.jpg')
-# offer.photo.attach(io: file, filename: 'pizza_pouch.png', content_type: 'image/png')
-# offer.save
