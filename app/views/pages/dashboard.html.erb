@@ -1,11 +1,17 @@
 <div class="dash-container">
   <div class="dash-main-content">
+    <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
     <div class="current-gallery">
       <h1><%=@gallery.name%></h1>
       <div class="current-gallery-edit-button">
         <%=link_to edit_gallery_path(@gallery) do%>
         <div class="current-gallery-edit-button-div"><h2>Edit</h2><i class="fas fa-cog"></i><i class="fas fa-cog fa-cog02"></i></div>
         <% end %>
+        <div class="view-gallery-button-edit">
+        <%=link_to gallery_path(@gallery) do %>
+          <button>View Public Gallery</button>
+        <% end %>
+        </div>
       </div>
       <div class="cards">
         <% if !@nfts.nil? %>
