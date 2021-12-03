@@ -1,3 +1,44 @@
+////-------------------- dashboard edit section-------------/////
+.current-gallery{
+  h1{
+    text-align: center;
+  }
+}
+.current-gallery-edit-button-div{
+  display: flex;
+}
+.current-gallery-edit-button{
+  a{
+  color: $gold-light;
+  font-size: 25px;
+  margin-right: 10px;
+  }
+  i{
+  color: $gold-light;
+  font-size: 25px;
+  transition: 1s;
+  height: 100%
+  }
+  .fa-cog02{
+  color: $gold-light;
+  font-size: 25px;
+  transition: 1s;
+  height: 100%;
+  margin-top: 10px;
+  }
+}
+.current-gallery-edit-button:hover{
+  a{
+    text-decoration: none;
+  }
+  i{
+    transform: rotate(180deg);
+  }
+  .fa-cog02{
+    transform: rotate(-180deg);
+  }
+}
+/// ----------------------this is the edit gallery section ------------------------
 .dash-container {
   width:95%;
   max-width: 1200px;
@@ -5,7 +46,6 @@
   margin:auto;
   margin-bottom: 100px;
 }
-
 .dash-main-content {
   margin-top: 30px;
 }
