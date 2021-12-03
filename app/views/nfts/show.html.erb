@@ -3,11 +3,13 @@
       <button id="back_button"><i class="fas fa-arrow-left"></i>Back to Gallery</button>
     <% end %>
 
+    <% @nft_order %>
+
   <div class = "parent_show_container_nft_content">
-    <% unless @nft.previous.nil? %>
-    <%= link_to gallery_nft_path(@gallery.id, @nft.previous.id) do %>
-    <i class="fas fa-chevron-left" ></i>
-    <% end %>
+    <% if @finito != 0 %>
+      <%= link_to gallery_nft_path(@gallery, @did) do %>
+        <i class="fas fa-chevron-left" ></i>
+      <% end %>
     <% end %>
 
   <div class = "show_container_nft_content">
@@ -38,10 +40,10 @@
       </div>
     </div>
     </div>
-    <% unless @nft.next.nil? %>
-    <%= link_to gallery_nft_path(@gallery.id, @nft.next.id) do %>
-    <i class="fas fa-chevron-right" ></i>
-    <% end %>
+    <% if @finito < @length - 1 %>
+      <%= link_to gallery_nft_path(@gallery, @done) do %>
+        <i class="fas fa-chevron-right" ></i>
+      <% end %>
     <% end %>
   </div>
 </div>
