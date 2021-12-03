@@ -39,7 +39,7 @@
   height: fit-content;
   width: 50%;
 
-  button{
+  button {
   position: absolute;
   bottom: 3%;
   right: 5%;
@@ -129,7 +129,7 @@
   position: absolute;
   bottom: 5%;
   right: 3%;
-  button{
+  .button {
   padding: 1px 10px;
   margin-left: 10px;
   border-radius: 12px;
@@ -140,7 +140,7 @@
   color: $gold-light;
   transition: 0.3s ease-in-out;
   }
-  button:hover{
+  .button:hover{
   border: 2px solid transparent;
   background: $gold-light;
   color: $black-dark;
