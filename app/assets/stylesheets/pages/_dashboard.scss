@@ -85,7 +85,7 @@
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
   }
@@ -120,7 +120,15 @@
   display: flex;
   justify-content: center;
 }
-
+.card-nft:hover {
+  transform: scale(1.1);
+  cursor: grab;
+}
+.sortable-ghost, .sortable-chosen, .grabbing-nft {
+  cursor: -webkit-grabbing !important; /* Chrome 1-21, Safari 4+ */
+	cursor:    -moz-grabbing !important; /* Firefox 1.5-26 */
+	cursor:         grabbing !important;
+}
 .card-nft a:hover {
   text-decoration: none;
 }

@@ -39,7 +39,7 @@
         <%# <%= link_to offer_path() do %>
           <div class="card-nft">
             <%= image_tag nft.image_url_small %>
-            <%= link_to gallery_nft_path(params[:id], nft), method: :patch do%>
+            <%= link_to gallery_nft_path(params[:id], nft), method: :patch, class: "stretched-link" do%>
               <i class="fas fa-plus"></i>
             <% end %>
             <div class="card-nft-infos">

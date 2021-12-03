@@ -4,7 +4,7 @@ import Rails from '@rails/ujs';
 const initSortable = () => {
   const list = document.querySelector('.itemchosens');
   const sortable = Sortable.create(list, {
-    onEnd: () => {
+    onEnd: (evt) => {
       const order = { order: sortable.toArray() };
 
       Rails.ajax({
