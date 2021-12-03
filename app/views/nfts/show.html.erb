@@ -23,10 +23,13 @@
         <h3  id="p-content-h3"> Created by: </h3>
         <p> <%= @nft.artist_name %></p>
         <div id="buttons-OS-S-bottom">
-          <%= link_to @nft.opensea_link, target:"_blank" do %>
-            <button>OpenSea</button>
+          <%= link_to @nft.opensea_link, class: 'button', target:"_blank" do %>
+            OpenSea
           <% end %>
-            <button data-url="<%= @base_url %><%= gallery_nft_path(@gallery, @nft) %>" id="shareButtonShow">Share</button>
+
+          <button class="button" data-url="<%= gallery_nft_url(@gallery, @nft) %>" id="shareButtonShow">
+            Share
+          </button>
         </div>
       </div>
     </div>
