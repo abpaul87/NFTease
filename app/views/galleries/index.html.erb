@@ -1,87 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,400i|Nunito:200,300i" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        <title>Find Galleries to Browse</title>
-    </head>
-
-<div class="navbar-design-parent-div">
-  <div class="main-content">
-        <div class="content-header">
-        <div class="header-text"><h1>Browse</h1></div>
-                <div class="search-bar">
-                <%= form_tag galleries_path, method: :get do %>
-                    <%= text_field_tag :query,
-                    params[:query],
-                    class: "search-input",
-                    placeholder: "NFT's galore"
-                    %>
-                    <%= submit_tag "Search", class: "btn-search" %>
-                <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-     <body>
-     <h1>Trending</h1>
-     <style>
-        h1{text-align: center;
-        color: white;}
-    </style>
-        <section class="flex-container">
-                <% @galleries[0..2].each do |galleries| %>
-                 <%= link_to gallery_path(galleries) do %>
-                <div class="gal">
-                      <p>
-                      </p><div class="gal-nft ">
-                          <div class="top-nft">
-                            <% gala = galleries.nfts.first.image_url_small %>
-                            <% gula = galleries.nfts.last.image_url_small %>
-                            <% gola = galleries.nfts.sample.image_url_small %>
-                              <%= image_tag gala %>
-                          </div>
-                          <div class="middle" style="float: center;">
-                              <%= image_tag gula %>
-                              <%= image_tag gola %>
-                          </div>
-                      </div>
-                      <p></p>
-                </div>
-                <% end %>
-                    <%end%>
-            </section>
-    <div class="gal2">
-    <h1>Galleries</h1>
-        <section class="flex-container">
-                 <% apricot = @galleries.length - 1 %>
-                    <% @galleries[3..apricot].each do |galleries| %>
-                    <%= link_to gallery_path(galleries) do %>
-                <div class="gal">
-                        <p>
-                        </p><div class="gal-nft ">
-                            <div class="top-nft">
-                              <% gala = galleries.nfts.first.image_url_small %>
-                              <% gula = galleries.nfts.last.image_url_small %>
-                              <% gola = galleries.nfts.sample.image_url_small %>
-                                <%= image_tag gala %>
-                            </div>
-                            <div class="middle" style="float: center;">
-                                <%= image_tag gula %>
-                                <%= image_tag gola %>
-                            </div>
-                        </div>
-                        <p></p>
+<div class="dash-container">
+  <div class="dash-main-content">
+    <div class="current-gallery">
+      <h1>Browse Top Galleries</h1>
+      <div class="cards">
+          <% @galleries[0..7].each do |gallery| %>
+            <%= link_to gallery_path(gallery) do %>
+              <div class="card-nft">
+                <% gallery1 = gallery.nfts.first.image_url_small %>
+                <% gallery2 = gallery.nfts.last.image_url_small %>
+                <% gallery3 = gallery.nfts.sample.image_url_small %>
+                <img src="<%=gallery1%>">
+                <div class="card-nft-infos">
+                  <div>
+                    <h2><%=truncate(gallery.name, length: 20)%></h2>
                   </div>
-                  <% end %>
-                      <%end%>
-            </section>
-    </body>
-
-</a>
+                </div>
+              </div>
+            <%end%>
+          <%end%>
+      </div>
+    </div>
+  </div>
+</div>
