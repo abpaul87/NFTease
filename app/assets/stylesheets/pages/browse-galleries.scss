@@ -1,0 +1,44 @@
+.browse-container {
+  width:95%;
+  max-width: 1200px;
+  color: white;
+  margin:auto;
+  margin-bottom: 100px;
+}
+
+.browse-main-content {
+  margin-top: 30px;
+}
+
+.browse-cards {
+  width: 95%;
+  max-width:1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  grid-row-gap: 60px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.gallery-card {
+  display:flex;
+  width: 300px;
+  height: 250px;
+  border: 3px solid gray;
+}
+
+.gallery-collage {
+  display:flex;
+  width:100%;
+}
+
+.image-gallery {
+  width: 30%;
+  // height: 200px;
+  overflow: hidden;
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  display:cover;
+}
