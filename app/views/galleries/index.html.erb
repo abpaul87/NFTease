@@ -14,7 +14,7 @@
 <div class="navbar-design-parent-div">
   <div class="main-content">
         <div class="content-header">
-        <div class="header-text"><h1>#</h1></div>
+        <div class="header-text"><h1>Browse</h1></div>
                 <div class="search-bar">
                 <%= form_tag galleries_path, method: :get do %>
                     <%= text_field_tag :query,
@@ -32,159 +32,55 @@
      <body>
      <h1>Trending</h1>
      <style>
-        h1{text-align: center;}
+        h1{text-align: center;
+        color: white;}
     </style>
         <section class="flex-container">
+                <% @galleries[0..2].each do |galleries| %>
+                 <%= link_to gallery_path(galleries) do %>
                 <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/1">
-                    <p>
-                    </p><div class="gal-nft ">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
+                      <p>
+                      </p><div class="gal-nft ">
+                          <div class="top-nft">
+                            <% gala = galleries.nfts.first.image_url_small %>
+                            <% gula = galleries.nfts.last.image_url_small %>
+                            <% gola = galleries.nfts.sample.image_url_small %>
+                              <%= image_tag gala %>
+                          </div>
+                          <div class="middle" style="float: center;">
+                              <%= image_tag gula %>
+                              <%= image_tag gola %>
+                          </div>
+                      </div>
+                      <p></p>
                 </div>
-                <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/2">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
+                <% end %>
                     <%end%>
-                </div>
-                <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/3">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
-                </div>
             </section>
     <div class="gal2">
     <h1>Galleries</h1>
         <section class="flex-container">
+                 <% apricot = @galleries.length - 1 %>
+                    <% @galleries[3..apricot].each do |galleries| %>
+                    <%= link_to gallery_path(galleries) do %>
                 <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/1">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
+                        <p>
+                        </p><div class="gal-nft ">
+                            <div class="top-nft">
+                              <% gala = galleries.nfts.first.image_url_small %>
+                              <% gula = galleries.nfts.last.image_url_small %>
+                              <% gola = galleries.nfts.sample.image_url_small %>
+                                <%= image_tag gala %>
+                            </div>
+                            <div class="middle" style="float: center;">
+                                <%= image_tag gula %>
+                                <%= image_tag gola %>
+                            </div>
                         </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
-                </div>
-                <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/2">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
-                </div>
-                <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/3">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
-                </div>
-            </section>
-            <section class="flex-container">
-                <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/1">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
-                </div>
-                <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/2">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
-                </div>
-                <div class="gal">
-                <% @galleries.each do |galleries| %>
-                <a href="/galleries/3">
-                    <p>
-                    </p><div class="gal-nft">
-                        <div class="top-nft">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="200" height="200">
-                        </div>
-                        <div class="middle" style="float: center;">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                            <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530968/nftease/sample.jpg" width="100" height="100">
-                        </div>
-                    </div>
-                    <p></p>
-                    <%end%>
-                </div>
+                        <p></p>
+                  </div>
+                  <% end %>
+                      <%end%>
             </section>
     </body>
 
