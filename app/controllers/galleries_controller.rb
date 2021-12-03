@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  OPENSEA_ASSET_URL = "https://api.opensea.io/api/v1/assets?format=json&limit=30&offset=0&order_direction=desc&owner="
+  OPENSEA_ASSET_URL = "https://api.opensea.io/api/v1/assets?format=json&limit=50&offset=0&order_direction=asc&owner="
 
   def index
     @galleries = Gallery.all
