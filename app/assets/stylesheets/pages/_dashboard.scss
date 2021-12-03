@@ -11,6 +11,8 @@
 }
 
 .cards {
+  width: 95%;
+  max-width:1200px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
@@ -170,4 +172,9 @@
 
   text-decoration: none;
   color: $black-dark;
+}
+
+.title-add-select-nft-china{
+  color: $white;
+  margin: 3% 5% 3%;
 }
