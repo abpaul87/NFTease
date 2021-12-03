@@ -11,6 +11,9 @@
                     <li></li>
                     <li></li>
                     <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
             </ul>
     </div >
   <div class="div-form-parent">
@@ -35,9 +38,7 @@
 
         <div class="field">
           <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
+          <%= @minimum_password_length %> characters minimum<br />
           <%= f.password_field :password, autocomplete: "new-password" %>
         </div>
 
@@ -48,10 +49,12 @@
 
         <div class="actions">
           <%= f.submit "Sign up" %>
-          <%= render "devise/shared/error_messages", resource: resource %>
+          <%= render "devise/shared/links" %>
         </div>
         <% end %>
       </div>
     </div>
   </div>
 </body>
+
+      <%# render "devise/shared/error_messages", resource: resource %>
