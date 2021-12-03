@@ -10,6 +10,8 @@ import "channels"
 import { init } from './blogBg';
 import { copyingText } from './shareBtn';
 
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

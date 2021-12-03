@@ -12,6 +12,7 @@
     "pepjs": "^0.5.3",
     "popper.js": "^1.16.1",
     "sortablejs": "^1.14.0",
+    "tippy.js": "^6.3.7",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
