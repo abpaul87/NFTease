@@ -1,3 +1,6 @@
+.complet-div-footer{
+  width: 100%
+}
 .this-the-div-for-the-footer{
   display: flex;
   align-items: center;
@@ -15,7 +18,9 @@
   font-size: 25px;
   font-family: 'VT323', monospace;
 }
-
+.this-is-the-about-us-page a:hover{
+  text-decoration: none;
+}
 
 .footer-main-div{
   display: flex;
@@ -26,10 +31,12 @@
   h1{
     color: $white;
     font-size: 25px;
+    font-family: 'VT323', monospace;
   }
   h2{
     color: $white;
     font-size: 20px;
+    font-family: 'VT323', monospace;
   }
 }
 
@@ -40,10 +47,10 @@
 
   color: $white;
 
-  margin: 10px;
+  margin: 5px;
   font-size: 20px;
 
   i{
-    margin: 0 20px;
+    margin: 0 10px;
   }
 }
