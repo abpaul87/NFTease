@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_12_06_161623) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "background"
     t.string "playlist"
     t.string "fonts"
     t.index ["user_id"], name: "index_galleries_on_user_id"

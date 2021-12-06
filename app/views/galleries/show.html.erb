@@ -1,4 +1,3 @@
-
 <div id="preloader">
   <div id="preloader-header">
       <h1>Loading gallery...</h1>
@@ -7,43 +6,41 @@
   </div>
 </div>
 
-
-<div id="public-gallery-container">
+<div class="public-gallery-container" style="display:none;" id="public-gallery-container">
   <div class="dash-main-content">
-  <% if user_signed_in? %>
-  <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
-  <% end %>
-    <div class="current-gallery">
-  <%= audio_tag "elevatormus.mp3", controls: true, loop: true, id: "audio" %>
-      <h1><%=@gallery.name%></h1>
-      <div class="public-cards">
-      <% if !@nfts.nil? %>
-        <% index = 0 %>
-        <% @nfts.each do |nft| %>
-                    <section class="content-section" data-scroll>
-            <%= link_to gallery_nft_path(@gallery,nft) do %>
-                    <div class="div figure">
-              <div class="public-card-nft">
-                <%# <div id="app">
-                  <div class = "cardish animated"> %>
-                <% if nft.animation_url.nil? %>
+    <% if user_signed_in? %>
+    <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
+    <% end %>
+    <%= audio_tag "elevatormus.mp3", controls: true, loop: true, id: "audio" %>
+      <div class="current-gallery">
+          <h1><%=@gallery.name%></h1>
+            <div class="public-cards">
+            <% if !@nfts.nil? %>
+            <% index = 0 %>
+            <% @nfts.each do |nft| %>
+              <section class="content-section" data-scroll>
+              <%= link_to gallery_nft_path(@gallery,nft) do %>
+              <div class="div figure">
+                <div class="public-card-nft">
+                   <% if nft.animation_url.nil? %>
                     <img src="<%=nft.image_url%>" loading=<%=if index < 5 then 'eager' else 'auto' end%>>
                   <% else %>
                     <video src="<%=nft.animation_url%>", controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
                   <% end %>
-                <div class="public-card-nft-infos">
-                  <div>
-                      <h2 style="font-family:<%= @gallery.fonts %>;"><%=truncate(nft.token_name, length: 28)%></h2>
-                    <p><%=truncate(nft.collection_name, :length =>50)%></p>
+                    <div class="public-card-nft-infos">
+                      <div>
+                        <h2 style="font-family:<%= @gallery.fonts %>;"><%=truncate(nft.token_name, length: 28)%></h2>
+                        <p><%=truncate(nft.collection_name, :length =>50)%></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-                    </div>
+              <%end%>
+              <% index =+ 1%>
+              </section>
             <%end%>
-            <% index =+ 1%>
-                  </section>
-        <%end%>
-      </div>
+            <%end%>
+          </div>
+    </div>
   </div>
-</div>
 </div>

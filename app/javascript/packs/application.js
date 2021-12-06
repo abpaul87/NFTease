@@ -10,7 +10,7 @@ import "channels"
 import { init } from './blogBg';
 import { copyingText } from './shareBtn';
 import { scrollingAnimation } from './scrolling'
-import { myFunction,showPage } from './preloader';
+import { myFunction, showPage } from './preloader';
 import { autoPlay } from '../plugins/autoPlay';
 
 
