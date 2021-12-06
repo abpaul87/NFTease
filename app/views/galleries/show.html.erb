@@ -14,7 +14,7 @@
   <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
   <% end %>
     <div class="current-gallery">
-  <%= audio_tag "elevatormus.mp3", autoplay: true, controls: true, loop: true, autostart: true, id: "audio" %>
+  <%= audio_tag "elevatormus.mp3", controls: true, loop: true, id: "audio" %>
       <h1><%=@gallery.name%></h1>
       <div class="public-cards">
         <% if !@nfts.nil? %>
