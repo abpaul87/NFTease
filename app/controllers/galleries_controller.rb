@@ -30,7 +30,7 @@ class GalleriesController < ApplicationController
   def update_order
     ordered_ids = params[:order].split(',')
 
-    updates = ordered_ids.map.with_index do |id, index|
+    updates = ordered_ids.map.with_index do |_id, index|
       { gallery_order: index }
     end
 
