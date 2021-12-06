@@ -24,7 +24,11 @@
                 <div class="public-card-nft">
                   <%# <div id="app">
                     <div class = "cardish animated"> %>
-                  <img src="<%=nft.image_url%>" loading=<%=if index < 5 then 'eager' else 'auto' end%>>
+                  <% if nft.animation_url.nil? %>
+                    <img src="<%=nft.image_url%>" loading=<%=if index < 5 then 'eager' else 'auto' end%>>
+                  <% else %>
+                    <video src="<%=nft.animation_url%>", controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
+                  <% end %>
                   <div class="public-card-nft-infos">
                     <div>
                       <h2 style="font-family:<%= @gallery.fonts %>;"><%=truncate(nft.token_name, length: 28)%></h2>
