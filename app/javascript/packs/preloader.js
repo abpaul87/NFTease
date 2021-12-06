@@ -2,7 +2,7 @@
 var myVar;
 
 export function myFunction() {
-  myVar = setTimeout(showPage, 4000);
+  myVar = setTimeout(showPage, 2000);
 }
 
 export function showPage() {
