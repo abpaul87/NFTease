@@ -10,7 +10,7 @@ import "channels"
 import { init } from './blogBg';
 import { copyingText } from './shareBtn';
 import { myFunction,showPage } from './preloader';
-
+import { autoPlay } from '../plugins/autoPlay';
 
 Rails.start()
 Turbolinks.start()
@@ -31,6 +31,7 @@ import { initSortable } from '../plugins/init_sortable';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  autoPlay();
   initSortable();
   copyingText();
 

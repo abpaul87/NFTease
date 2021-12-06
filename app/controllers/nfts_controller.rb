@@ -1,6 +1,8 @@
 class NftsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show]
 
+  skip_before_action :authenticate_user!, only: %i[show]
+
   def show
     @nft = Nft.find(params[:id])
     @gallery = Gallery.find(params[:gallery_id])
