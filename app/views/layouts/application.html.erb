@@ -13,7 +13,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <% if !current_page?(controller: '/devise/registrations', action: 'new') && !current_page?(controller: '/devise/sessions', action: 'new')%>
+    <% if !current_page?(controller: '/users/registrations', action: 'new') && !current_page?(controller: '/users/sessions', action: 'new')%>
       <%= render 'shared/footer' %>
     <% end %>
     <script src="https://unpkg.com/phosphor-icons"></script>
