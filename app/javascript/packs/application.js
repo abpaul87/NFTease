@@ -9,8 +9,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { init } from './blogBg';
 import { copyingText } from './shareBtn';
+import { scrollingAnimation } from './scrolling'
 import { myFunction,showPage } from './preloader';
 import { autoPlay } from '../plugins/autoPlay';
+
 
 Rails.start()
 Turbolinks.start()
@@ -34,7 +36,7 @@ document.addEventListener('turbolinks:load', () => {
   autoPlay();
   initSortable();
   copyingText();
-
+  scrollingAnimation();
   const landing = document.querySelector('#blob');
   if (landing) {
     init();
