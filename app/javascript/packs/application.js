@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { init } from './blogBg';
 import { copyingText } from './shareBtn';
+import { autoPlay } from '../plugins/autoPlay';
 
 
 
@@ -31,6 +32,7 @@ import { initSortable } from '../plugins/init_sortable';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  autoPlay();
   initSortable();
   copyingText();
   const landing = document.querySelector('#blob');
