@@ -9,7 +9,9 @@
       <% if !@nfts.nil? %>
         <% index = 0 %>
         <% @nfts.each do |nft| %>
+                    <section class="content-section" data-scroll>
             <%= link_to gallery_nft_path(@gallery,nft) do %>
+                    <div class="div figure">
               <div class="public-card-nft">
                 <%# <div id="app">
                   <div class = "cardish animated"> %>
@@ -21,8 +23,10 @@
                   </div>
                 </div>
               </div>
+                    </div>
             <%end%>
             <% index =+ 1%>
+                  </section>
         <%end%>
       <% end %>
       </div>

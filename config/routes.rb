@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard"
   get "aboutus", to: "pages#aboutus"
- 
+
   resources :galleries do
     member do
       patch :update_order # /galleries/:id/update_order
