@@ -105,7 +105,7 @@ class Blob {
     }
   }
   get numPoints() {
-    return this._points || 20;
+    return this._points || 25;
   }
 
   set radius(value) {
@@ -204,7 +204,7 @@ class Point {
     }
   }
   get elasticity() {
-    return this._elasticity || 0.001;
+    return this._elasticity || 0.0005;
   }
   set friction(value) {
     if(typeof value === 'number') {
@@ -212,7 +212,7 @@ class Point {
     }
   }
   get friction() {
-    return this._friction || 0.0055;
+    return this._friction || 0.008;
   }
 }
 
