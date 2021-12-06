@@ -1,0 +1,65 @@
+<body class="body-sign-up-form">
+<div class="area" >
+           <ul class="circles">
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+                <%= image_tag @urls.sample, class: "image" %>
+            </ul>
+    </div >
+  <div class="div-form-parent">
+
+    <div class="div-form-parent-child">
+      <div class="header-form-title-signup">
+        <%# <%= image_tag "icon-navbar-gametime.png" %>
+        <h2>Sign up to GameTime</h2>
+      </div>
+      <div class="div-form-child">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <!--<div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>-->
+
+        <div class="field">
+          <%= f.label :password %>
+          <%= @minimum_password_length %> characters minimum<br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class = "field">
+          <%= f.label :wallet %><br />
+          <%= f.text_field :wallet, required: true, autofocus: true, autocomplete: "0xc6aa79a22b08..."%>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up" %>
+          <%= render "devise/shared/links" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
+
+      <%# render "devise/shared/error_messages", resource: resource %>

@@ -1,5 +1,6 @@
 class GalleriesController < ApplicationController
   OPENSEA_ASSET_URL = "https://api.opensea.io/api/v1/assets?format=json&limit=50&offset=0&order_direction=asc&owner="
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @galleries = Gallery.all
@@ -57,7 +58,7 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:name)
+    params.require(:gallery).permit(:name, :fonts)
   end
 
   def opensea_pull

@@ -8,12 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Montserrat:ital,wght@1,300&family=Oswald&family=Permanent+Marker&family=Roboto+Condensed&display=swap');
+    </style>
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <% if !current_page?(controller: '/devise/registrations', action: 'new') && !current_page?(controller: '/devise/sessions', action: 'new')%>
+    <% if !current_page?(controller: '/users/registrations', action: 'new') && !current_page?(controller: '/users/sessions', action: 'new')%>
       <%= render 'shared/footer' %>
     <% end %>
     <script src="https://unpkg.com/phosphor-icons"></script>
