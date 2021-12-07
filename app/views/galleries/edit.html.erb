@@ -18,7 +18,11 @@
     <div class="cards itemchosens" style="margin-bottom: 50px;" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
           <div class="card-nft applesauce" data-id="<%= nft.id %>">
-            <%= image_tag nft.image_url_small %>
+            <% if nft.image_url_small.match?(/.*mp4$/) %>
+              <video src='<%= nft.image_url_small%>', controls, loop ></video>
+            <% else %>
+              <img src='<%= nft.image_url_small%>'>
+            <% end %>
             <%= link_to gallery_nft_path(params[:id], nft), method: :patch do %>
               <i class="fas fa-times"></i>
             <%end%>
@@ -39,7 +43,13 @@
       <%@nfts_available.each do |nft| %>
         <%# <%= link_to offer_path() do %>
           <div class="card-nft">
-            <%= image_tag nft.image_url_small %>
+            <% if nft.image_url_small.match?(/.*mp4$/) %>
+              <video src='<%= nft.image_url_small%>', controls, loop></video>
+            <% elsif nft.image_url_small.match?(/.*mov$/) %>
+              <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
+            <% else %>
+              <img src='<%= nft.image_url_small%>'>
+            <% end %>
             <%= link_to gallery_nft_path(params[:id], nft), method: :patch, class: "stretched-link" do%>
               <i class="fas fa-plus"></i>
             <% end %>

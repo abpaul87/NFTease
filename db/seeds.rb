@@ -108,6 +108,12 @@ users.each do |user|
   response = JSON.parse(request)
   order = 1
   response['assets'].each do |asset|
+    sale = 0
+    if asset['sell_orders'].nil?
+      sale = false
+    else
+      sale = true
+    end
     nft = Nft.new(
       opensea_id: asset['id'],
       token_name: asset['name'],
@@ -115,15 +121,16 @@ users.each do |user|
       collection_name: asset.dig('collection', 'name'),
       collection_description: asset.dig('collection', 'description'),
       artist_name: asset.dig('creator', 'user', 'username') || asset.dig('collection', 'name'),
-      image_url: asset['image_url'] || asset['image_original_url'],
+      image_url: asset['image_url'] || "https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png",
       animation_url: asset['animation_original_url'],
       current_owner: asset.dig('owner', 'address'),
       token_metadata: asset,
-      image_url_small: asset['image_preview_url'],
+      image_url_small: asset['image_preview_url'] || "https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png",
       opensea_link: asset['permalink'],
       gallery: gallery,
       user: user,
-      gallery_order: order
+      gallery_order: order,
+      forsale: sale
     )
     nft.save
     order += 1

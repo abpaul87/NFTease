@@ -1,0 +1,129 @@
+.nft-modal-content {
+  width:90%;
+  margin-left:5%;
+  margin-top:5%;
+  max-height:80vh;
+  // overflow:hidden;
+  display: flex;
+  align-items: center;
+
+  height: fit-content;
+
+  background: linear-gradient(to bottom, $show-card-top, $show-card-bottom);
+  border-radius: 20px;
+}
+
+
+.nft-modal_imagecontent{
+  position: relative;
+  height: fit-content;
+  width: 50%;
+
+  button {
+  position: absolute;
+  bottom: 3%;
+  right: 5%;
+  padding: 1px 10px;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid $black-dark;
+  font-size: 15px;
+  font-family: 'VT323', monospace;
+  color: $black-dark;
+  transition: 0.3s ease-in;
+    i{
+    color: $black-dark;
+    font-size: 15px;
+    padding: 1px 3px;
+    margin: 0;
+    }
+  }
+  button:hover{
+  border: 2px solid transparent;
+  background: $gold-light;
+  color: $black-dark;
+  }
+}
+
+.nft-modal_image{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // height:fit-content;
+  width: 100%;
+
+  img{
+    border-radius: 20px 0 0 20px;
+    width: 100%;
+  }
+}
+
+.nft-modal_textcontent{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 50%;
+  height: fit-content;
+}
+
+.nft-modal_text{
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  height: fit-content;
+  width: 85%;
+  color: $white;
+
+  h2{
+    color: $gold-light;
+    font-size: 30px;
+    margin: 10px 0 0;
+    font-family: 'VT323', monospace;
+  }
+  h3{
+    font-size: 25px;
+    margin:10px 0;
+  }
+  p{
+    margin: 0 0 10px 10px;
+    opacity: 0.6;
+    width: 100% ;
+    word-break: break-word;
+  }
+}
+
+#modal-content-h3{
+  margin-bottom: 4px;
+}
+////Opensea button and share button
+#modal-OS-button-bottom{
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
+  .button {
+  padding: 1px 10px;
+  margin-left: 10px;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid $gold-light;
+  font-size: 15px;
+  font-family: 'VT323', monospace;
+  color: $gold-light;
+  transition: 0.3s ease-in-out;
+  }
+  .button:hover{
+  border: 2px solid transparent;
+  background: $gold-light;
+  color: $black-dark;
+  }
+}
+
+.nft-modal-close {
+  position:relative;
+  top:0px;
+}
