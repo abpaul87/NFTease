@@ -15,5 +15,17 @@ class PagesController < ApplicationController
   end
 
   def aboutus
+    nunoimg = "https://res.cloudinary.com/jansommer/image/upload/v1638886031/nftease/image_lzl0s8.png"
+    nunodesc = ""
+    aleximg = "https://res.cloudinary.com/jansommer/image/upload/v1638886253/nftease/Image_from_iOS_x7swvk.jpg"
+    alexdesc = ""
+    phillipimg = "https://res.cloudinary.com/jansommer/image/upload/v1638890141/nftease/unnamed-1_e4isvx.png"
+    phillipdesc = ""
+    flynnimg = "https://res.cloudinary.com/jansommer/image/upload/v1638886200/nftease/unnamed_hwlhxu.png"
+    flynndesc = ""
+    @alex = { name: "Alex Bradford Paul", image: aleximg, desc: alexdesc }
+    @phillip = { name: "Jan Phillip Sommerfeld", image: phillipimg, desc: phillipdesc }
+    @nuno = { name: "Nuno Dantes Costa", image: nunoimg, desc: nunodesc }
+    @flynn = { name: "Flynn Washington", image: flynnimg, desc: flynndesc }
   end
 end
