@@ -13,44 +13,47 @@
       <% end %>
     <% end %>
 
-  <div class = "show_container_nft_content">
-    <div class = "show_container_nft_imagecontent">
-      <div class="nft_image">
-      <% if @nft.image_url.match?(/.*mp4$/) %>
-        <video src='<%=@nft.image_url%>', controls , loop></video>
-      <% elsif @nft.image_url_small.match?(/.*mov$/) %>
-        <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
-      <% else %>
-        <img src='<%=@nft.image_url%>'>
-      <% end %>
-        <button class="button-like-img-nft">like <i class="fas fa-heart"></i></button>
-      </div>
-    </div>
-    <div class = "show_container_nft_textcontent">
-      <div class = "nft_text">
-        <h2> <%= @nft.token_name %></h2>
-        <h3 id="collectionName"> <%= @nft.collection_name %></h3>
-        <p style="width: 85%; word-wrap: break-word;"> <%= @nft.token_description %></p>
-        <h3  id="p-content-h3"> Owned by: </h3>
-        <p> <%= @nft.current_owner %></p>
-        <h3  id="p-content-h3"> Created by: </h3>
-        <p> <%= @nft.artist_name %></p>
-        <div id="buttons-OS-S-bottom">
-          <% if @nft.forsale %>
-            <%= link_to @nft.opensea_link, class: 'button', target:"_blank" do %>
-              Buy now
-            <% end %>
-          <% end %>
-          <%= link_to @nft.opensea_link, class: 'button', target:"_blank" do %>
-            OpenSea
-          <% end %>
-
-          <button class="button" data-url="<%= gallery_nft_url(@gallery, @nft) %>" id="shareButtonShow">
-            Share
-          </button>
+    <div class = "show_container_nft_content">
+      <div class = "show_container_nft_imagecontent">
+        <div class="nft_image">
+        <% if @nft.image_url.match?(/.*mp4$/) %>
+          <video src='<%=@nft.image_url%>', controls , loop></video>
+        <% elsif @nft.image_url_small.match?(/.*mov$/) %>
+          <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
+        <% else %>
+          <img src='<%=@nft.image_url%>'>
+        <% end %>
+          <button class="button-like-img-nft">like <i class="fas fa-heart"></i></button>
         </div>
       </div>
-    </div>
+      <div class = "xbutton">
+        <i class="fas fa-times-circle"></i>
+        <div class = "show_container_nft_textcontent">
+          <div class = "nft_text">
+            <h2> <%= @nft.token_name %></h2>
+            <h3 id="collectionName"> <%= @nft.collection_name %></h3>
+            <p style="width: 85%; word-wrap: break-word;"> <%= @nft.token_description %></p>
+            <h3  id="p-content-h3"> Owned by: </h3>
+            <p> <%= @nft.current_owner %></p>
+            <h3  id="p-content-h3"> Created by: </h3>
+            <p> <%= @nft.artist_name %></p>
+            <div id="buttons-OS-S-bottom">
+              <% if @nft.forsale %>
+                <%= link_to @nft.opensea_link, class: 'button', target:"_blank" do %>
+                  Buy now
+                <% end %>
+              <% end %>
+              <%= link_to @nft.opensea_link, class: 'button', target:"_blank" do %>
+                OpenSea
+              <% end %>
+
+              <button class="button" data-url="<%= gallery_nft_url(@gallery, @nft) %>" id="shareButtonShow">
+                Share
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <% if @finito < @length - 1 %>
       <%= link_to gallery_nft_path(@gallery, @done) do %>
@@ -58,4 +61,17 @@
       <% end %>
     <% end %>
   </div>
+  <div class="card my-1">
+  <div class="card-body">
+    <p class="font-weight-bold">Comments</p>
+    <%= form_with(model: [@nft, @nft.comments.build]) do |f| %>
+      <div class="form-group">
+        <%= f.label 'New comment' %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+    <%= render @nft.comments %>
+  </div>
+</div>
 </div>
