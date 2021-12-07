@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[home aboutus]
 
   def home
+    @galleries = Gallery.all
   end
 
   def dashboard
