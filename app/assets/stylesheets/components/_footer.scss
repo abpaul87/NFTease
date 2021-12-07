@@ -1,5 +1,6 @@
 .complet-div-footer{
-  width: 100%
+  width: 100%;
+  margin-top: 50px;
 }
 .this-the-div-for-the-footer{
   display: flex;
@@ -17,9 +18,11 @@
   color: $white;
   font-size: 25px;
   font-family: 'VT323', monospace;
+  transition: 0.4s;
 }
 .this-is-the-about-us-page a:hover{
   text-decoration: none;
+  color: $gold-light;
 }
 
 .footer-main-div{
@@ -45,12 +48,17 @@
   display: flex;
   align-items: center;
 
-  color: $white;
-
   margin: 5px;
   font-size: 20px;
 
   i{
+    color: $white;
     margin: 0 10px;
+    transition: 0.4s;
+  }
+}
+.logo-footer-main-div{
+  i:hover{
+    color: $gold-light;
   }
 }
