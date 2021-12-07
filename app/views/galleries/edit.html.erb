@@ -1,15 +1,13 @@
-<div class = "dash-container">
-  <div class = "selector">
-  <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
-  </div>
+<button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
+<div class = "dash-container" style="margin-top: 25px;">
       <h2 style="text-align: center;"><%= @gallery.name %></h2>
   <div class = "chosen_items_gallery" style="margin-bottom: 40px;">
     <div class = "top-edit-optioins">
         <%= simple_form_for @gallery, html: { class: "text-input-filed-edit"} do |f| %>
           <%= f.input :name, label: false, class: "form-inline",:input_html => { :size => 100, :maxlength => 100 }%>
-          <%= f.input :fonts, collection: ["'Corinthia', cursive", "'Montserrat', sans-serif", "'Roboto Condensed', sans-serif", "'Oswald', sans-serif", "'Permanent Marker', cursive", "Cinzel", "Arial" ] %>
+          <%= f.input :fonts,label: false, collection: ["'Corinthia', cursive", "'Montserrat', sans-serif", "'Roboto Condensed', sans-serif", "'Oswald', sans-serif", "'Permanent Marker', cursive", "Cinzel", "Arial" ] %>
           <button type="button" class="actions_change_name_edit">
-            <%= f.button :submit, "Update Name"%>
+            <%= f.button :submit, "Update"%>
           </button>
         <% end %>
       </div>
