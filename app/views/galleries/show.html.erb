@@ -28,13 +28,11 @@
                     <% else %>
                       <video src="<%=nft.animation_url%>", controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
                     <% end %>
-                      <div class="wrapper" style="background-color:<%= @gallery.colors %>; background-color:" >
                       <div class="public-card-nft-infos">
                         <div>
                           <h2 style="font-family:<%= @gallery.fonts %>;"><%=truncate(nft.token_name, length: 28)%></h2>
                           <p><%=truncate(nft.collection_name, :length =>50)%></p>
                         </div>
-                      </div>
                       </div>
                     </div>
                   </div>
