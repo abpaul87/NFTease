@@ -1,7 +1,6 @@
 .background-color-edit{
   padding: 1px;
 }
-
 $heightVarImg: 500px;
 $widthVarImg: 500px;
 
@@ -110,8 +109,6 @@ $widthVarImg: 500px;
   color: gray;
   height: 70px;
   width: 70%;
-}
-.public-card-nft-infos{
   h2{
     color: $black-dark;
     margin-bottom: 8px;
@@ -200,3 +197,52 @@ $widthVarImg: 500px;
 .intro-heading {
   font-weight: 700;
 }
+
+/* Extra small devices (phones, 600px and down) */
+$heightVarImgSm: 280px;
+$widthVarImgSm: 280px;
+@media only screen and (max-width: 600px) {
+  .content-section{
+    max-height: $heightVarImgSm;
+    min-height: $heightVarImgSm;
+  }
+  .public-card-nft > img {
+  max-height: $heightVarImgSm;
+  min-height: $heightVarImgSm;
+  max-width: $widthVarImgSm;
+  min-height: $widthVarImgSm;
+}
+.public-card-nft > video {
+  max-height: $heightVarImgSm;
+  min-height: $heightVarImgSm;
+  max-width: $widthVarImgSm;
+  min-height: $widthVarImgSm;
+
+  object-fit: cover;
+  border-radius: 20px;
+}
+  .public-card-nft-infos{
+    width: 90%;
+    h2{
+      font-size: 18px;
+    }
+  }
+  .current-gallery{
+    h1{
+      font-size: 25px;
+      word-break: break-word;
+    }
+  }
+  .dash-container{
+    margin-bottom: 80px;
+  }
+}
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {
+//   .content-section{
+//     max-height: 350px;
+//     min-height: 350px;
+//   }
+// }
+// /* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {...}
