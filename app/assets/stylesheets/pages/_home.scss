@@ -62,19 +62,23 @@
 }
 
 
-// content explicative on the home page
+// -------------------------------content explicative on the home page -----------------------------///
 // the 3 cards
 .home-explaining-content-parent{ //give the generals values to the div
-  height: 350px;
+  height: 100%;
   width: 100%;
 }
-.home-explaining-content-child{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 350px;
-  width: 100%;
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .home-explaining-content-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 350px;
+    width: 100%;
+  }
 }
+
 .card-explain-home{
   display: flex;
   flex-direction: column;
@@ -100,7 +104,11 @@
     font-size: 1.1rem ;
     font-family: $body-font;
     font-weight: 300;
-    width: 95%;
+    width: 90%;
+  }
+  strong{
+    font-family: 'IBM Plex Sans';
+    font-weight: 900;
   }
 }
 
@@ -190,5 +198,84 @@ $featureMesure: 190px;
   word-break: break-word;
   h2{
     font-size: 1rem
+  }
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .home-explaining-content-child{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+    .card-explain-home{
+    margin: 35px;
+    width: 350px;
+    height: 200px;
+    i{
+      font-size:2.6rem;
+    }
+    h2{
+      font-size:1.4rem;
+    }
+  }
+  .featured-galleries-home-page-h{
+    margin-bottom: 30px;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .home-explaining-content-child{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+    .card-explain-home{
+    margin: 35px;
+    width: 350px;
+    height: 200px;
+    i{
+      font-size:2.8rem;
+    }
+    h2{
+      font-size:1.6rem;
+    }
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .home-explaining-content-child{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    padding-bottom: 45px;
+  }
+  .card-explain-home{
+    margin: 35px;
+    width: 330px;
+    height: 220px;
+    i{
+      font-size:2.8rem;
+    }
+    h2{
+      font-size:1.6rem;
+    }
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .home-explaining-content-child{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 350px;
+    width: 100%;
+  }
+  i{
+  font-size: 2.8rem;
+  }
+  h2{
+    font-size:1.6rem;
   }
 }

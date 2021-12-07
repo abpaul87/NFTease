@@ -50,6 +50,9 @@
   max-width: 1200px;
   color: white;
   margin:auto;
+  h3{
+    font-size: 1.2rem;
+  }
 }
 .dash-main-content {
   margin-top: 30px;
@@ -76,8 +79,8 @@
     font-size: 24px;
     color: white;
     position: absolute;
-    right: -5%;
-    top: -5%;
+    right: -10px;
+    top: -15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,34 +132,6 @@
 .main-content {
   padding-top: 25px;
   margin-bottom: 40px;
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (max-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 }
 
 .card-nft {
@@ -228,4 +203,113 @@
 .title-add-select-nft-china{
   color: $white;
   margin: 3% 5% 3%;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+    padding: 0 30px;
+  }
+  .dash-container{
+    width: 100%;
+    word-break: break-word;
+    h2{
+      margin-top: 40px;
+      font-size: 15px;
+    }
+  }
+  .current-gallery-edit-button-div{
+    align-items: center;
+    h2{
+      font-size: 30px;
+    }
+    i{
+      font-size: 40px;
+      .fa-cog{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .current-gallery-edit-button{
+    align-items: flex-end;
+  }
+  .current-gallery{
+    padding-top: 15px;
+    h1{
+      font-size: 25px;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dash-container{
+    width: 100%;
+    word-break: break-word;
+    h2{
+      font-size: 20px;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .dash-container{
+    width: 100%;
+    word-break: break-word;
+    h2{
+      font-size: 30px;
+    }
+  }
+  .edit-gallery-optioins-btn{
+    i{
+      font-size: 20px;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .dash-container{
+    width: 100%;
+    word-break: break-word;
+    h2{
+      font-size: 30px;
+    }
+  }
+  .edit-gallery-optioins-btn{
+    i{
+      font-size: 20px;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .dash-container{
+    width: 100%;
+    word-break: break-word;
+    h2{
+      font-size: 40px;
+    }
+  }
+  .edit-gallery-optioins-btn{
+    i{
+      font-size: 20px;
+    }
+  }
 }
