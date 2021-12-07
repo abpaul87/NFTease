@@ -4,6 +4,20 @@
   width: 70%;
   margin: 25px auto 0;
 }
+
+.edit-gallery-optioins-btn{
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid $gold-light;
+  color: $gold-light;
+  transition: 0.4s;
+}
+.edit-gallery-optioins-btn:hover{
+  border: 2px solid transparent;
+  background: $gold-light;
+  color: $black-dark;
+  font-weight: bold;
+}
 /////////-------------------------------EDIT SETTINGS FOR THE EDIT PAGE--------------------///
 .chosen_items_gallery{
   display: flex;
