@@ -13,7 +13,7 @@
             <%= f.input :name, label: false, class: "form-inline",:input_html => { :size => 100, :maxlength => 100 }%>
             <%= f.input :fonts,label: false, collection: [["Corinthia", "'Corinthia', cursive", {class: "corinth", style: "color: red"}], ["Montserrat","'Montserrat', sans-serif", {class: "montserrat"}], ["Roboto", "'Roboto Condensed', sans-serif", {class: "roboto"}], ["Oswald","'Oswald', sans-serif", {class: "oswald"}], ["Permanent Marker", "'Permanent Marker', cursive", {class: "perm"}]] %>
             <%= f.input :playlist, as: :file %>
-            <%= f.input :colors,label: false, collection: ["'Purple'", "'Red'", "'Blue'", "'Yellow'", "'White'", "'Gold'", "'Black'" ] %>
+            <%= f.color_field :colors,label: false %>
       </div>
       </div>
       <div class="modal-footer">
