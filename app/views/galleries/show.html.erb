@@ -6,9 +6,9 @@
   </div>
 </div>
 
-    <% if user_signed_in? %>
-    <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
-    <% end %>
+  <% if user_signed_in? %>
+  <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
+  <% end %>
 <div class="public-gallery-container" style="display:none;" id="public-gallery-container">
   <div class="dash-main-content">
        <%= audio_check(@gallery) %>
@@ -22,11 +22,13 @@
               <%= link_to gallery_nft_path(@gallery,nft) do %>
               <div class="div figure">
                 <div class="public-card-nft">
-                  <% if nft.animation_url.nil? %>
-                    <img src="<%=nft.image_url%>" loading=<%=if index < 5 then 'eager' else 'auto' end%>>
-                  <% else %>
-                    <video src="<%=nft.animation_url%>", controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
-                  <% end %>
+                <% if nft.image_url.match?(/.*mp4$/) %>
+                  <video src='<%=nft.image_url%>', controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
+                <% elsif nft.image_url_small.match?(/.*mov$/) %>
+                  <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
+                <% else %>
+                  <img src='<%=nft.image_url%>' loading=<%=if index < 5 then 'eager' else 'auto' end%>>
+                <% end %>
                     <div class="public-card-nft-infos">
                       <div>
                         <h2 style="font-family:<%= @gallery.fonts %>;"><%=truncate(nft.token_name, length: 28)%></h2>

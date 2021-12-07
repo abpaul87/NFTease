@@ -16,7 +16,13 @@
   <div class = "show_container_nft_content">
     <div class = "show_container_nft_imagecontent">
       <div class="nft_image">
-        <%= image_tag @nft.image_url %>
+      <% if @nft.image_url.match?(/.*mp4$/) %>
+        <video src='<%=@nft.image_url%>', controls , loop></video>
+      <% elsif @nft.image_url_small.match?(/.*mov$/) %>
+        <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
+      <% else %>
+        <img src='<%=@nft.image_url%>'>
+      <% end %>
         <button class="button-like-img-nft">like <i class="fas fa-heart"></i></button>
       </div>
     </div>
@@ -30,6 +36,11 @@
         <h3  id="p-content-h3"> Created by: </h3>
         <p> <%= @nft.artist_name %></p>
         <div id="buttons-OS-S-bottom">
+          <% if @nft.forsale %>
+            <%= link_to @nft.opensea_link, class: 'button', target:"_blank" do %>
+              Buy now
+            <% end %>
+          <% end %>
           <%= link_to @nft.opensea_link, class: 'button', target:"_blank" do %>
             OpenSea
           <% end %>
