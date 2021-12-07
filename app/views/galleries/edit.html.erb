@@ -19,7 +19,7 @@
       <% end %>
       </div>
     </div>
-    <div class="frame" style="background-color:<%= @gallery.colors %>"> 
+    <div class="frame"> 
     <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
           <div class="card-nft applesauce" data-id="<%= nft.id %>">
