@@ -7,8 +7,9 @@
     <div class = "top-edit-optioins">
         <%= simple_form_for @gallery, html: { class: "text-input-filed-edit"} do |f| %>
           <%= f.input :name, label: false, class: "form-inline",:input_html => { :size => 100, :maxlength => 100 }%>
-          <%= f.input :fonts, collection: ["'Corinthia', cursive", "'Montserrat', sans-serif", "'Roboto Condensed', sans-serif", "'Oswald', sans-serif", "'Permanent Marker', cursive", "Cinzel", "Arial" ] %>
+          <%= f.input :fonts, collection: [["Corinthia", "'Corinthia', cursive", {class: "corinth", style: "color: red"}], ["Montserrat","'Montserrat', sans-serif", {class: "montserrat"}], ["Roboto", "'Roboto Condensed', sans-serif", {class: "roboto"}], ["Oswald","'Oswald', sans-serif", {class: "oswald"}], ["Permanent Marker", "'Permanent Marker', cursive", {class: "perm"}]] %>
           <button type="button" class="actions_change_name_edit">
+          <%= f.input :playlist, as: :file %>
             <%= f.button :submit, "Update Name"%>
           </button>
         <% end %>
