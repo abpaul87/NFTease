@@ -21,7 +21,7 @@
               <% @nfts.each do |nft| %>
                 <section class="content-section" data-scroll>
                 <%= link_to gallery_nft_path(@gallery,nft) do %>
-                <div class="div figure">
+                <div class="div figure" style="background-color:<%= @gallery.colors %>">
                   <div class="public-card-nft">
                     <% if nft.animation_url.nil? %>
                       <img src="<%=nft.image_url%>" loading=<%=if index < 5 then 'eager' else 'auto' end%>>

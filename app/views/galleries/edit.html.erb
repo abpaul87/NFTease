@@ -19,7 +19,7 @@
       <% end %>
       </div>
     </div>
-    <section class="wrapper" style="background-color:<%= @gallery.colors %>">
+    <div class="frame" style="background-color:<%= @gallery.colors %>"> 
     <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
           <div class="card-nft applesauce" data-id="<%= nft.id %>">
@@ -36,7 +36,7 @@
           </div>
       <%end%>
     </div>
-    </section>
+    </div>
   </div>
   <div class = "gallerieless_nfts">
     <h2 class="title-add-select-nft-china">Select NFTs to Add:</h2>
