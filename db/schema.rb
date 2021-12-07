@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_12_07_175441) do
+ActiveRecord::Schema.define(version: 2021_12_07_154709) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +68,15 @@ ActiveRecord::Schema.define(version: 2021_12_07_175441) do
     t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "nft_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["nft_id"], name: "index_likes_on_nft_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "nfts", force: :cascade do |t|
     t.integer "gallery_order"
     t.integer "opensea_id"
@@ -104,6 +116,8 @@ ActiveRecord::Schema.define(version: 2021_12_07_175441) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "galleries", "users"
+  add_foreign_key "likes", "nfts"
+  add_foreign_key "likes", "users"
   add_foreign_key "nfts", "galleries"
   add_foreign_key "nfts", "users"
 end
