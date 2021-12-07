@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_12_07_093618) do
 
   # These are extensions that must be enabled in order to support this database
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_093618) do
     t.string "name"
     t.string "playlist"
     t.string "fonts"
+    t.string "colors"
     t.index ["user_id"], name: "index_galleries_on_user_id"
   end
 
