@@ -50,6 +50,9 @@
   max-width: 1200px;
   color: white;
   margin:auto;
+  h3{
+    font-size: 1.2rem;
+  }
 }
 .dash-main-content {
   margin-top: 30px;
@@ -266,6 +269,11 @@
       font-size: 30px;
     }
   }
+  .edit-gallery-optioins-btn{
+    i{
+      font-size: 20px;
+    }
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -280,6 +288,11 @@
       font-size: 30px;
     }
   }
+  .edit-gallery-optioins-btn{
+    i{
+      font-size: 20px;
+    }
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -292,6 +305,11 @@
     word-break: break-word;
     h2{
       font-size: 40px;
+    }
+  }
+  .edit-gallery-optioins-btn{
+    i{
+      font-size: 20px;
     }
   }
 }
