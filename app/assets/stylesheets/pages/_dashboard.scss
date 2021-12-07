@@ -50,7 +50,6 @@
   max-width: 1200px;
   color: white;
   margin:auto;
-  margin-bottom: 100px;
 }
 .dash-main-content {
   margin-top: 30px;
@@ -64,7 +63,7 @@
   grid-gap: 40px;
   grid-row-gap: 60px;
   text-decoration: none;
-  margin-top: 20px;
+  margin: 20px auto 0;
 }
 
 .cards a:hover {
@@ -93,8 +92,8 @@
     font-size: 24px;
     color: white;
     position: absolute;
-    right: -5%;
-    top: -5%;
+    right: -10px;
+    top: -15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,6 +181,12 @@
 }
 
 .card-nft > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.card-nft > video {
   height: 200px;
   width: 100%;
   object-fit: cover;

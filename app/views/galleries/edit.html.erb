@@ -1,26 +1,28 @@
 <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
+
 <div class = "dash-container" style="margin-top: 25px;">
       <h2 style="text-align: center;"><%= @gallery.name %></h2>
-  <div class = "chosen_items_gallery" style="margin-bottom: 40px;">
-    <div class = "top-edit-optioins">
-        <%= simple_form_for @gallery, html: { class: "text-input-filed-edit"} do |f| %>
-          <%= f.input :name, label: false, class: "form-inline",:input_html => { :size => 100, :maxlength => 100 }%>
-          <%= f.input :fonts,label: false, collection: ["'Corinthia', cursive", "'Montserrat', sans-serif", "'Roboto Condensed', sans-serif", "'Oswald', sans-serif", "'Permanent Marker', cursive", "Cinzel", "Arial" ] %>
-          <button type="button" class="actions_change_name_edit">
-            <%= f.button :submit, "Update"%>
-          </button>
-        <% end %>
-      </div>
-      <div class="view-gallery-button-edit">
+    </div>
+  <div class="top-div-edit-page">
+    <button type="button" class="btn btn-primary edit-gallery-optioins-btn" data-toggle="modal" data-target="#exampleModal">
+      Edit Gallery Options <i class="fas fa-cogs" style="margin-left: 5px;"></i>
+    </button>
+    <%= render "form", gallery: @gallery %>
+
+    <div class="view-gallery-button-edit">
       <%=link_to gallery_path(@gallery) do %>
         <button>View Public Gallery</button>
       <% end %>
-      </div>
     </div>
-    <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
+  </div>
+    <div class="cards itemchosens" style="margin-bottom: 50px;" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
           <div class="card-nft applesauce" data-id="<%= nft.id %>">
-            <%= image_tag nft.image_url_small %>
+            <% if nft.image_url_small.match?(/.*mp4$/) %>
+              <video src='<%= nft.image_url_small%>', controls, loop ></video>
+            <% else %>
+              <img src='<%= nft.image_url_small%>'>
+            <% end %>
             <%= link_to gallery_nft_path(params[:id], nft), method: :patch do %>
               <i class="fas fa-times"></i>
             <%end%>
@@ -33,14 +35,21 @@
           </div>
       <%end%>
     </div>
+    </div>
   </div>
-  <div class = "gallerieless_nfts">
+  <div class = "gallerieless_nfts" style="margin-bottom: 80px;">
     <h2 class="title-add-select-nft-china">Select NFTs to Add:</h2>
     <div class="cards" style="margin: auto;">
       <%@nfts_available.each do |nft| %>
         <%# <%= link_to offer_path() do %>
           <div class="card-nft">
-            <%= image_tag nft.image_url_small %>
+            <% if nft.image_url_small.match?(/.*mp4$/) %>
+              <video src='<%= nft.image_url_small%>', controls, loop></video>
+            <% elsif nft.image_url_small.match?(/.*mov$/) %>
+              <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
+            <% else %>
+              <img src='<%= nft.image_url_small%>'>
+            <% end %>
             <%= link_to gallery_nft_path(params[:id], nft), method: :patch, class: "stretched-link" do%>
               <i class="fas fa-plus"></i>
             <% end %>

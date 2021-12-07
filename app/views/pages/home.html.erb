@@ -20,18 +20,40 @@
       <div class="card-explain-home">
         <i class="ph-fast-forward-circle"></i>
         <h2>Fast</h2>
-        <h4>Easy and fast to use</h4>
+        <h4>Easy and fast to use <em style="color: blue">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe inventore praesentium molestias beatae, dolor ipsam? </em></h4>
       </div>
       <div class="card-explain-home">
         <i class="ph-sliders" style="transform: rotate(90deg);"></i>
         <h2>Customizable</h2>
-        <h4>Customize to your needs</h4>
+        <h4>Customize to your needs <em style="color: blue">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe inventore praesentium molestias beatae, dolor ipsam? </em></h4>
       </div>
       <div class="card-explain-home">
         <i class="ph-share-network"></i>
         <h2>Accesible</h2>
-        <h4>Share with your friends and family</h4>
+        <h4>Share with your friends and family <em style="color: blue">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe inventore praesentium molestias beatae, dolor ipsam? </em></h4>
       </div>
     </div>
   </div>
+</div>
+
+<div class="featured-galleries-home-page-h"><h1>FEATURED GALLERIES</h1></div>
+
+<div class="home-feature-nft-main-div">
+  <% @galleries.each do |gallery| %>
+    <%= link_to gallery_path(gallery) do %>
+      <div class="home-feature-nft-parent-div">
+          <% gallery1 = gallery.nfts.first.image_url_small %>
+          <% gallery2 = gallery.nfts.last.image_url_small %>
+          <% gallery3 = gallery.nfts.sample.image_url_small %>
+            <div class="home-feature-image-div">
+              <img src="<%=gallery1%>">
+              <img src="<%=gallery2%>">
+              <img src="<%=gallery3%>">
+            </div>
+            <div class="home-feature-content-div">
+              <h2><%=truncate(gallery.name, length: 40)%></h2>
+            </div>
+        </div>
+    <%end%>
+  <%end%>
 </div>

@@ -30,7 +30,7 @@ class GalleriesController < ApplicationController
   def update_order
     ordered_ids = params[:order].split(',')
 
-    updates = ordered_ids.map.with_index do |_id, index|
+    updates = ordered_ids.map.with_index do |id, index|
       { gallery_order: index }
     end
 
@@ -58,7 +58,7 @@ class GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require(:gallery).permit(:name, :fonts)
+    params.require(:gallery).permit(:name, :fonts, :playlist, :colors)
   end
 
   def opensea_pull
@@ -68,6 +68,12 @@ class GalleriesController < ApplicationController
     request = Net::HTTP::get(url)
     response = JSON.parse(request)
     response['assets'].each do |asset|
+      sale = 0
+      if asset['sell_orders'].nil?
+        sale = false
+      else
+        sale = true
+      end
       if Nft.where(user: current_user).where(opensea_id: asset['id']).empty?
         nft = Nft.create(
           opensea_id: asset['id'],
@@ -76,18 +82,19 @@ class GalleriesController < ApplicationController
           collection_name: asset.dig('collection', 'name'),
           collection_description: asset.dig('collection', 'description'),
           artist_name: asset.dig('creator', 'user', 'username') || asset.dig('collection', 'name'),
-          image_url: asset['image_url'] || asset['image_original_url'] || "https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png",
+          image_url: asset['image_url'] || "https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png",
           animation_url: asset['animation_original_url'],
           current_owner: asset.dig('owner', 'address'),
           token_metadata: asset,
           image_url_small: asset['image_preview_url'] || "https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png",
           opensea_link: asset['permalink'],
-          user: current_user
+          user: current_user,
+          forsale: sale
         )
         nft.save
       else
         nft = Nft.find_by(user: current_user, opensea_id: asset['id'])
-        nft.update(current_owner: asset.dig('owner', 'address'), token_metadata: asset)
+        nft.update(current_owner: asset.dig('owner', 'address'), token_metadata: asset, forsale: sale)
       end
     end
   end

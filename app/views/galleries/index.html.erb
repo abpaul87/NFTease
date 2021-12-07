@@ -3,7 +3,7 @@
     <div class="current-gallery">
       <h1>Browse Top Galleries</h1>
       <div class="cards">
-          <% @galleries[0..7].each do |gallery| %>
+          <% @galleries.each do |gallery| %>
             <%= link_to gallery_path(gallery) do %>
               <div class="card-nft">
                 <% gallery1 = gallery.nfts.first.image_url_small %>
