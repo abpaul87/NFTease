@@ -85,29 +85,18 @@
 .form-group{
   margin-bottom: 0;
 }
-
-// .name-input {
-//   padding: 10px;
-//   font-size: 14px;
-//   // border: 1px solid grey;
-//   float: left;
-//   width: 70%;
-//   background: #f1f1f1;
-// }
-
-// .save_name_btn {
-//   display: flex;
-//   width: 30%;
-//   padding: 10px;
-//   background: #212121;
-//   color: white;
-//   font-size: 14px;
-//   border: 1px solid grey;
-//   border-left: none; /* Prevent double borders */
-//   cursor: pointer;
-//   transition-duration: 0.3s;
-// }
-
-// .btn-search:hover {
-//   background: #6D9886;
-// }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .top-div-edit-page{
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .edit-gallery-optioins-btn{
+    width: 47%;
+  }
+  .view-gallery-button-edit{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+  }
+}
