@@ -1,0 +1,98 @@
+.model-content-body-edit-form{ //// ----------------------------- General div values-----/
+  height: 500px;
+  background: linear-gradient(135deg, $black-b, $black-light);
+  border-radius: 15px;
+  i{
+    font-size: 20px;
+  }
+}
+.model-dialog-body-edit-form{
+  max-width: 700px;
+}
+
+.modal-header-content-top-form-edit{ ////----------------------------- header------////
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 15%;
+  width: 100%;
+  padding: 0 25px;
+  h5{
+    font-size: 3rem;
+    color: $white;
+  }
+}
+
+.model-body-body-edit-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.text-input-filed-edit-form-1{
+  height: 100%;
+}
+
+.top-edit-options{ ////// -----------------------Form layout options---------////
+  display: flex;
+  justify-content: space-evenly;
+  color: $white;
+  input{
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  select{
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+  #gallery_name{
+    width: 85%;
+  }
+  #gallery_fonts{
+    width: 85%;
+  }
+  #gallery_playlist{
+    margin-left: 20%;
+    input{
+      width: 250px;
+      height: 35px;
+    }
+  }
+  #gallery_colors{
+    width: 250px;
+    height: 35px;
+  }
+  .file-colors-div-form-edit-modal{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+.modal-footer-content-bottom-form-edit{//////-----------------------footer-----//
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 15%;
+  padding: 0 25px;
+  margin-bottom: 2%;
+
+  border: 1px solid transparent;
+}
+
+
+.was-validated .form-control:valid, .form-control.is-valid{
+  border-color: $gold-light;
+}
+.form-control.is-valid:focus{
+  border-color: $gold-light;
+  box-shadow: 0 0 0 0.2rem rgba(208,166,91, 5%);
+}
+
