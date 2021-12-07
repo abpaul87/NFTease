@@ -6,4 +6,20 @@ module ApplicationHelper
       audio_tag "elevatormus.mp3", controls: true, loop: true, id: "audio"
     end
   end
+
+  # def video_check_large(nft)
+  #   if nft.image_url.include?("/mp4$/")
+  #     <video src='<%=nft.image_url%>', controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
+  #   else
+  #     <img src='<%=nft.image_url%>' loading=<%=if index < 5 then 'eager' else 'auto' end%>>
+  #   end
+  # end
+
+  # def video_check_small(nft)
+  #   if nft.image_url_small.include?("/mp4$/")
+  #     <video src='<%=nft.image_url_small%>', controls , loop, %>></video>
+  #   else
+  #     <img src='<%=nft.image_url_small%>' loading=<%=if index < 5 then 'eager' else 'auto' end%>>
+  #   end
+  # end
 end
