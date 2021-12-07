@@ -1,7 +1,7 @@
       <% if user_signed_in? %>
       <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
       <% end %>
-<div class="background-color-edit">
+<div class="background-color-edit" style="background-color:<%= @gallery.colors %>">
   <div id="preloader">
     <div id="preloader-header">
         <h1>Loading gallery...</h1>

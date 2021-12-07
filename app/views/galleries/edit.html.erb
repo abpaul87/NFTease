@@ -3,7 +3,6 @@
 <div class = "dash-container" style="margin-top: 25px;">
       <h2 style="text-align: center;"><%= @gallery.name %></h2>
     </div>
-
   <div class="top-div-edit-page">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       Edit Gallery Options
@@ -16,7 +15,6 @@
       <% end %>
     </div>
   </div>
-
     <div class="cards itemchosens" style="margin-bottom: 50px;" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
           <div class="card-nft applesauce" data-id="<%= nft.id %>">
@@ -27,12 +25,12 @@
             <div class="card-nft-infos">
               <div>
                 <h2 style="font-family:<%= @gallery.fonts %>; font-size: <%= "20px" if @gallery.fonts == "'Corinthia', cursive"%>"><%=truncate(nft.token_name, length: 28)%></h2>
-                <h2 style="background-color:<%= @gallery.colors %>; background-color:" ><%=truncate(nft.token_name, length: 28)%></h2>
                 <p><%=truncate(nft.token_description, :length =>80)%></p>
               </div>
             </div>
           </div>
       <%end%>
+    </div>
     </div>
   </div>
   <div class = "gallerieless_nfts" style="margin-bottom: 80px;">
