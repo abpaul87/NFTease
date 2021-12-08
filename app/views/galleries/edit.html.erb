@@ -5,8 +5,9 @@
     </div>
   <div class="top-div-edit-page">
     <button type="button" class="btn btn-primary edit-gallery-optioins-btn" data-toggle="modal" data-target="#exampleModal">
-      Edit Gallery Options <i class="fas fa-cogs" style="margin-left: 5px;"></i>
+      Gallery Options <i class="fas fa-cogs" style="margin-left: 5px;"></i>
     </button>
+
     <%= render "form", gallery: @gallery %>
 
     <div class="view-gallery-button-edit">
@@ -15,7 +16,11 @@
       <% end %>
     </div>
   </div>
-    <div class="cards itemchosens" style="margin-bottom: 50px;" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
+    <div class="gallery-edit-section-header">
+      <h2>Current Gallery</h2>
+      <p>Add, remove, and re-order to craft the perfect gallery. Just drag & drop to re-order.</p>
+    </div>
+    <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>
           <div class="card-nft applesauce" data-id="<%= nft.id %>">
             <% if nft.image_url_small.match?(/.*mp4$/) %>
@@ -38,7 +43,10 @@
     </div>
   </div>
   <div class = "gallerieless_nfts" style="margin-bottom: 80px;">
-    <h2 class="title-add-select-nft-china">Select NFTs to Add:</h2>
+    <div class="gallery-edit-section-header">
+      <h2>Your NFT Library</h2>
+      <p>Add NFTs from your library to your gallery.</p>
+    </div>
     <div class="cards" style="margin: auto;">
       <%@nfts_available.each do |nft| %>
         <%# <%= link_to offer_path() do %>

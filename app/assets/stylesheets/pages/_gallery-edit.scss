@@ -102,5 +102,22 @@
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  
+
+}
+
+.gallery-edit-section-header {
+  max-width: 1200px;
+  width: 95%;
+  // margin-left: 20px;
+  margin:30px auto;
+  // padding-left: 20px;
+  color: $white;
+  p {
+    font-size: 20px;
+    color:#dddddd;
+  }
+}
+
+.itemchosens {
+  margin-bottom: 90px;
 }
