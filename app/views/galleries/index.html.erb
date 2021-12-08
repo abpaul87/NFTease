@@ -1,7 +1,9 @@
 <div class="dash-container">
   <div class="dash-main-content">
     <div class="current-gallery">
-      <h1>Browse Top Galleries</h1>
+      <div id="browse-header">
+        <h1>Popular Galleries</h1>
+      </div>
       <div class="cards">
           <% @galleries.each do |gallery| %>
             <%= link_to gallery_path(gallery) do %>
@@ -12,7 +14,7 @@
                 <img src="<%=gallery1%>">
                 <div class="card-nft-infos">
                   <div>
-                    <h2><%=truncate(gallery.name, length: 20)%></h2>
+                    <h5><%=truncate(gallery.name, length: 20)%></h5>
                   </div>
                 </div>
               </div>

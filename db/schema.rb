@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_155241) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.string "background"
     t.string "playlist"
     t.string "fonts"
     t.string "colors"
