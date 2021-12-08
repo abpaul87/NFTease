@@ -85,25 +85,6 @@
 .form-group{
   margin-bottom: 0;
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .top-div-edit-page{
-    width: 100%;
-    justify-content: space-evenly;
-  }
-  .edit-gallery-optioins-btn{
-    width: 47%;
-  }
-  .view-gallery-button-edit{
-    width: 45%;
-    display: flex;
-    justify-content: center;
-  }
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-}
 
 .gallery-edit-section-header {
   max-width: 1200px;
@@ -121,3 +102,26 @@
 .itemchosens {
   margin-bottom: 90px;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .top-div-edit-page{
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .edit-gallery-optioins-btn{
+    width: 47%;
+  }
+  .view-gallery-button-edit{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+  }
+  .gallery-edit-section-header{
+    p{
+      font-size: 15px;
+    }
+  }
+}
+
