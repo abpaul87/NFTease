@@ -3,7 +3,7 @@
   margin-left:5%;
   margin-top:5%;
   max-height:80vh;
-  // overflow:hidden;
+  overflow:hidden;
   display: flex;
   align-items: center;
 
@@ -11,18 +11,11 @@
 
   background: linear-gradient(to bottom, $show-card-top, $show-card-bottom);
   border-radius: 20px;
-}
-
-
-.nft-modal_imagecontent{
-  position: relative;
-  height: fit-content;
-  width: 50%;
-
-  button {
+  .button-like-img-nft {
   position: absolute;
-  bottom: 3%;
-  right: 5%;
+  bottom: 5%;
+  left: 40%;
+  z-index: 10;
   padding: 1px 10px;
   border-radius: 12px;
   background: transparent;
@@ -38,11 +31,29 @@
     margin: 0;
     }
   }
-  button:hover{
+  .button-like-img-nft:hover{
   border: 2px solid transparent;
   background: $gold-light;
   color: $black-dark;
   }
+  .nft-modal-close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    .notowhitebtn{
+    background: none;
+    border: none;
+    font-size: 25px;
+    }
+  }
+}
+
+
+.nft-modal_imagecontent{
+  position: relative;
+  height: fit-content;
+  width: 50%;
+
 }
 
 .nft-modal_image{
@@ -137,15 +148,3 @@
   }
 }
 
-.notowhitebtn{
-  background: none;
-  border: none;
-  font-size: 25px;
-}
-
-.nft-modal-close {
-  margin-right: 5%;
-  margin-top: 5%;
-  // position: relative;
-  // top: 38px;
-}
