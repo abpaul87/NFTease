@@ -58,6 +58,7 @@
     background-color: transparent;
     border: 1px solid $gold-light ;
     border-radius: 10px;
+    text-decoration: none;
 
     transition: var(--transition1);
   }
@@ -83,6 +84,7 @@
   background-color: transparent;
   border: 1px solid $gold-light ;
   border-radius: 10px;
+  text-decoration: none;
 
   transition: var(--transition1);
   }
@@ -126,6 +128,7 @@
     background-color: transparent;
     border: 1px solid transparent ;
     border-radius: 10px;
+    text-decoration: none;
 
     transition: var(--transition1);
   }
@@ -183,6 +186,7 @@
     a{
       border: 1px solid transparent;
       transition: 0s;
+      text-decoration: none;
     }
     a:hover{
       background: transparent;
