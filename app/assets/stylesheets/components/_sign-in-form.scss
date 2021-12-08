@@ -134,3 +134,20 @@
   color: $black-dark;
   border: 2px solid $gold-light;
 }
+
+@media only screen and (max-width: 600px) {
+  .div-form-parent-child-signin{
+    width: 90%;
+    height: 85%;
+  }
+  .div-form-parent-child-signin{
+    h2{
+      font-size: 1.6rem;
+    }
+  }
+  .actions-signin{
+    input{
+      margin-bottom: 10px;
+    }
+  }
+}

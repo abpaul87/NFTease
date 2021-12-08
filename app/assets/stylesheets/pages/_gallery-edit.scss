@@ -108,7 +108,8 @@
 @media only screen and (max-width: 600px) {
   .top-div-edit-page{
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 5px;
   }
   .edit-gallery-optioins-btn{
     width: 47%;
@@ -124,4 +125,3 @@
     }
   }
 }
-

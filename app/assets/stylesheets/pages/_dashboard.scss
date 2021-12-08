@@ -2,10 +2,8 @@
 .current-gallery{
   h1{
     text-align: center;
+    color: $white;
   }
-}
-.current-gallery-edit-button-div{
-  display: flex;
 }
 .current-gallery-edit-button{
   display: flex;
@@ -33,10 +31,10 @@
   margin-top: 10px;
   }
 }
+a:hover{
+  text-decoration: none;
+}
 .current-gallery-edit-button:hover{
-  a{
-    text-decoration: none;
-  }
   i{
     transform: rotate(180deg);
   }
@@ -204,6 +202,9 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .current-gallery{
+    margin-top: 30px;
+  }
   .cards {
     grid-template-columns: 1fr;
     padding: 0 30px;

@@ -6,7 +6,8 @@
       <h1><%=truncate(@gallery.name, length: 100)%></h1>
       <div class="top-div-edit-page">
         <%=link_to edit_gallery_path(@gallery) do%>
-          <div class="current-gallery-edit-button-div"><h2>Edit</h2><i class="fas fa-cog"></i><i class="fas fa-cog fa-cog02"></i>
+          <div class="current-gallery-edit-button">
+            <h2>Edit</h2><i class="fas fa-cog"></i><i class="fas fa-cog fa-cog02"></i>
           </div>
         <% end %>
         <div class="view-gallery-button-edit">

@@ -258,3 +258,22 @@
   color: $dark;
   border: 2px solid transparent;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .div-form-parent-child{
+    width: 80%;
+    height: 95%;
+  }
+  .header-form-title-signup{
+    h2{
+      font-size: 1.4rem;
+    }
+  }
+  .field{
+    margin: 15px 0;
+    input{
+      width: 260px;
+    }
+  }
+}
