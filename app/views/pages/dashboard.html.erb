@@ -1,19 +1,23 @@
 <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
 
-<div class="dash-container">
-  <div class="dash-main-content">
+<%# <div class="dash-container"> %>
+  <%# <div class="dash-main-content"> %>
     <div class="current-gallery">
       <h1><%=truncate(@gallery.name, length: 100)%></h1>
-      <div class="current-gallery-edit-button">
+      <div class="top-div-edit-page">
         <%=link_to edit_gallery_path(@gallery) do%>
-        <div class="current-gallery-edit-button-div"><h2>Edit</h2><i class="fas fa-cog"></i><i class="fas fa-cog fa-cog02"></i></div>
+          <div class="current-gallery-edit-button-div"><h2>Edit</h2><i class="fas fa-cog"></i><i class="fas fa-cog fa-cog02"></i>
+          </div>
         <% end %>
         <div class="view-gallery-button-edit">
-        <%=link_to gallery_path(@gallery) do %>
-          <button>View Public Gallery</button>
-        <% end %>
+          <%=link_to gallery_path(@gallery) do %>
+            <button>View Public Gallery</button>
+          <% end %>
         </div>
-      </div>
+    </div>
+    <div class="gallery-edit-section-header">
+      <h2>Current Gallery</h2>
+    </div>
       <div class="cards">
         <% if !@nfts.nil? %>
           <% @nfts.each do |nft| %>
@@ -23,7 +27,7 @@
                 <img src="<%=nft.image_url_small%>">
                 <div class="card-nft-infos">
                   <div>
-                    <h3><%=truncate(nft.token_name, length: 28)%></h3>
+                    <h5><%=truncate(nft.token_name, length: 28)%></h5>
                     <p><%=truncate(nft.collection_name, :length =>50)%></p>
                   </div>
                 </div>
@@ -33,5 +37,5 @@
         <% end %>
       </div>
     </div>
-  </div>
-</div>
+  <%# </div> %>
+<%# </div> %>
