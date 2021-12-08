@@ -3,9 +3,11 @@ module ApplicationHelper
     if gallery.playlist.attached?
       cl_video_tag gallery.playlist.key, source_types: :mp3, controls: true, loop: true, id: "audio"
     else
-      cl_video_tag "y35agfb6o0o5gwsubcsg8h3mmtwq", source_types: :mp3, controls: true, loop: true, id: "audio"
+      audio_tag "elevatormus.mp3", controls: true, loop: true, id: "audio"
     end
   end
+
+  # cl_video_tag "y35agfb6o0o5gwsubcsg8h3mmtwq", source_types: :mp3, controls: true, loop: true, id: "audio"
 
   # def video_check_large(nft)
   #   if nft.image_url.include?("/mp4$/")
