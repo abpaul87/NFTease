@@ -67,6 +67,7 @@
   grid-row-gap: 60px;
   text-decoration: none;
   margin: 20px auto 0;
+  margin-bottom: 150px;
 }
 
 .cards a:hover {
@@ -236,7 +237,7 @@
     align-items: flex-end;
   }
   .current-gallery{
-    padding-top: 15px;
+    // padding-top: 15px;
     h1{
       font-size: 25px;
     }
