@@ -10,10 +10,6 @@
     </div>
   </div>
 
-
-  <% if user_signed_in? %>
-    <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
-  <% end %>
   <div class="public-gallery-container" style="display:none;" id="public-gallery-container">
     <div class="dash-main-content">
       <%= audio_check(@gallery) %>
