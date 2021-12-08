@@ -23,9 +23,9 @@ class PagesController < ApplicationController
     phillipdesc = ""
     flynnimg = "https://res.cloudinary.com/jansommer/image/upload/v1638886200/nftease/unnamed_hwlhxu.png"
     flynndesc = ""
-    @alex = { name: "Alex Bradford Paul", image: aleximg, desc: alexdesc }
-    @phillip = { name: "Jan Phillip Sommerfeld", image: phillipimg, desc: phillipdesc }
-    @nuno = { name: "Nuno Dantes Costa", image: nunoimg, desc: nunodesc }
-    @flynn = { name: "Flynn Washington", image: flynnimg, desc: flynndesc }
+    @alex = { name: "Alex Bradford Paul", image: aleximg, desc: alexdesc, position: "CEO" }
+    @phillip = { name: "Jan Phillip  Sommerfeld", image: phillipimg, desc: phillipdesc, position: "CTO" }
+    @nuno = { name: "Nuno Dantes Costa", image: nunoimg, desc: nunodesc, position: "CCO" }
+    @flynn = { name: "Flynn Washington", image: flynnimg, desc: flynndesc, position: "CDO" }
   end
 end
