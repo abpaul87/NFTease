@@ -47,7 +47,54 @@
                 <div>
 
                   <!-- Modal -->
-                  <%= render 'galleries/nftshow' %>
+                  <div class="modal fade" id="nft-show-<%=nft.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document" style="width:0px;0px;">
+                    </div>
+                    <div class = "nft-modal-content" >
+                      <div class="nft-modal-close">
+                        <button type="button" class="notowhitebtn" data-dismiss="modal">
+                          <i class="fas fa-times-circle"></i>
+                        </button>
+                      </div>
+                      <div class="nft-modal-like">
+                      <button class="button-like-img-nft">like <i class="fas fa-heart" style="color: #781f19;"></i></button>
+                      </div>
+                      <div class = "nft-modal_imagecontent">
+                        <div class="nft-modal_image">
+                          <%= image_tag nft.image_url %>
+                        </div>
+                      </div>
+                      <div class = "nft-modal-left-content">
+                        <div class = "nft-modal_textcontent">
+                          <div class = "nft-modal_text">
+                            <h2> <%= nft.token_name %></h2>
+                            <h3 id="collectionName"> <%= nft.collection_name %></h3>
+                            <p style="width: 85%; word-wrap: break-word;"> <%= nft.token_description %></p>
+                            <h3  id="modal-content-h3"> Owned by: </h3>
+                            <p> <%= nft.current_owner %></p>
+                            <h3  id="modal-content-h3"> Created by: </h3>
+                            <p> <%= nft.artist_name %></p>
+                            <div id="buttons-OS-S-bottom">
+                              <% if nft.forsale %>
+                                <%= link_to nft.opensea_link, class: 'button', target:"_blank" do %>
+                                  Buy now
+                                <% end %>
+                              <% end %>
+                              <%= link_to nft.opensea_link, class: 'button', target:"_blank" do %>
+                                OpenSea
+                              <% end %>
+                              <button class="button" data-url="<%= gallery_nft_url(@gallery, nft) %>" id="shareButtonShow">
+                                Share
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                 <%# <%= render 'galleries/nftshow' %>
+
                 </div>
                 <% index =+ 1%>
               </section>
