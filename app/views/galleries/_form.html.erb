@@ -7,7 +7,7 @@
         <i class="fas fa-times-circle" id="screw-form-2"></i>
       </div>
       <div class="modal-body model-body-body-edit-form">
-            <%= simple_form_for gallery, html: { class: "text-input-filed-edit text-input-filed-edit-form-1"} do |f| %>
+            <%= simple_form_for @gallery, html: { class: "text-input-filed-edit text-input-filed-edit-form-1"} do |f| %>
           <div class = "top-edit-options">
             <%= f.input :name, label: "Gallery Name"%>
             <%= f.input :fonts,label: "Gallery Font", collection: [["Corinthia", "'Corinthia', cursive", {class: "corinth", style: "color: red"}], ["Montserrat","'Montserrat', sans-serif", {class: "montserrat"}], ["Roboto", "'Roboto Condensed', sans-serif", {class: "roboto"}], ["Oswald","'Oswald', sans-serif", {class: "oswald"}], ["Permanent Marker", "'Permanent Marker', cursive", {class: "perm"}]] %>
