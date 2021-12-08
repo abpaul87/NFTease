@@ -3,7 +3,7 @@ module ApplicationHelper
     if gallery.playlist.attached?
       cl_video_tag gallery.playlist.key, source_types: :mp3, controls: true, loop: true, id: "audio"
     else
-      audio_tag "elevatormus.mp3", controls: true, loop: true, id: "audio"
+      cl_video_tag "y35agfb6o0o5gwsubcsg8h3mmtwq", source_types: :mp3, controls: true, loop: true, id: "audio"
     end
   end
 
