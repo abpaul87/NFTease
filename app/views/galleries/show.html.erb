@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
+  <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
 <% end %>
 <div class="background-color-edit" style="background-color:<%= @gallery.colors %>">
   <div id="preloader">
@@ -92,6 +92,9 @@
                       </div>
                     </div>
                   </div>
+
+                 <%# <%= render 'galleries/nftshow' %>
+
                 </div>
                 <% index =+ 1%>
               </section>
