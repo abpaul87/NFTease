@@ -1,0 +1,26 @@
+<h1 class="about-us-title"> About us </h1>
+
+<div class = "dashying">
+  <div class="cardysich">
+    <% @nfteam.each do |nfmember| %>
+      <div class="cardy-trip trippin">
+        <div class="hold-on-image">
+          <%= image_tag nfmember[:image], class: "nfmemberi" %>
+        </div>
+        <div class="cardy-trip-infos">
+          <div class="info-nfmember">
+            <h2 class="nfmembern"><%= nfmember[:name] %></h2>
+            <p class="nfmemberp"><%= nfmember[:position] %></p>
+          </div>
+          <div class="footery-links">
+            <a href="#"><i class="giraffe fab fa-github"></i></a>
+            <a href="#"><i class="giraffe fab fa-instagram"></i></a>
+            <a href="#"><i class="giraffe fab fa-facebook"></i></a>
+            <a href="#"><i class="giraffe fab fa-twitter"></i></a>
+            <a href="#"><i class="giraffe fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
