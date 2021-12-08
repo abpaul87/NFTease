@@ -40,21 +40,22 @@
       </div>
     </div>
   </div>
-  <div class="modal fade" id="comment-show-<%=@comment.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+  <%#<div class="modal fade" id="comment-show-<%#=@comment.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog" role="document" style="width:0px;0px;">
     </div>
     <div class="card my-1">
       <div class="card-body">
         <p class="font-weight-bold">Comments</p>
-        <%= form_with(model: [nft, nft.comments.build]) do |f| %>
+        <%#= form_with(model: [nft, nft.comments.build]) do |f|
           <div class="form-group">
-            <%= f.label 'New comment' %>
-            <%= f.text_area :body, class: 'form-control' %>
+            <%#= f.label 'New comment' %>
+            <%#= f.text_area :body, class: 'form-control'
           </div>
-          <%= f.submit 'Submit', class: 'btn btn-primary' %>
+          <%= f.submit 'Submit', class: 'btn btn-primary'
         <% end %>
-        <%= render nft.comments %>
+        <%#= render nft.comments
       </div>
     </div>
-  </div>
+  </div> %>
 </div>
