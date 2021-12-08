@@ -9,7 +9,6 @@ class GalleriesController < ApplicationController
   def show
     @gallery = Gallery.find(params[:id])
     @nfts = Nft.where(gallery: @gallery).order(:gallery_order)
-    @comments = Comment.all
   end
 
   # def new

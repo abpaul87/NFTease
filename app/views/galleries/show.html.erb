@@ -22,15 +22,15 @@
               <section class="content-section" data-scroll>
               <%# <%= link_to gallery_nft_path(@gallery,nft) do %>
               <div data-toggle="modal" data-target="#nft-show-<%=nft.id%>">
-              <div class="div figure">
-                <div class="public-card-nft">
-                  <% if nft.image_url.match?(/.*mp4$/) %>
-                    <video src='<%=nft.image_url%>', controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
-                  <% elsif nft.image_url_small.match?(/.*mov$/) %>
-                    <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
-                  <% else %>
-                    <img src='<%=nft.image_url%>' loading=<%=if index < 5 then 'eager' else 'auto' end%>>
-                  <% end %>
+                <div class="div figure">
+                  <div class="public-card-nft">
+                    <% if nft.image_url.match?(/.*mp4$/) %>
+                      <video src='<%=nft.image_url%>', controls , loop, loading= <%= if index < 5 then 'eager' else 'auto' end %>></video>
+                    <% elsif nft.image_url_small.match?(/.*mov$/) %>
+                      <img src="https://res.cloudinary.com/jansommer/image/upload/v1638530952/nftease/no-image.png">
+                    <% else %>
+                      <img src='<%=nft.image_url%>' loading=<%=if index < 5 then 'eager' else 'auto' end%>>
+                    <% end %>
                     <div class="public-card-nft-infos">
                       <div>
                         <h2 style="font-family:<%= @gallery.fonts %>;"><%=truncate(nft.token_name, length: 28)%></h2>
@@ -39,16 +39,15 @@
                     </div>
                   </div>
                 </div>
-
-                <div>
+              <div>
 
                   <!-- Modal -->
                   <div class="modal fade" id="nft-show-<%=nft.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog" role="document" style="width:0px;0px;">
+                    <div class="modal-dialog" role="document">
                     </div>
                     <div class = "nft-modal-content" >
                       <div class="nft-modal-close">
-                        <button type="button" class="notowhitebtn" data-dismiss="modal">
+                        <button type="button" class="notowhitebtn" data-dismiss="nft-show-<%=nft.id%>">
                           <i class="fas fa-times-circle"></i>
                         </button>
                       </div>

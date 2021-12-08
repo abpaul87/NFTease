@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_155241) do
+ActiveRecord::Schema.define(version: 2021_12_07_154709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,22 +43,12 @@ ActiveRecord::Schema.define(version: 2021_12_07_155241) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.text "body"
-    t.bigint "nft_id"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["nft_id"], name: "index_comments_on_nft_id"
-  end
-
   create_table "galleries", force: :cascade do |t|
     t.json "selectors"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "background"
     t.string "playlist"
     t.string "fonts"
     t.string "colors"

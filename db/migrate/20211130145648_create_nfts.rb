@@ -16,7 +16,6 @@ class CreateNfts < ActiveRecord::Migration[6.1]
       t.string :opensea_link
       t.references :user, null: false, foreign_key: true
       t.references :gallery, null: true, foreign_key: true
-      t.references :comments, null: true, foreign_key: true
       t.timestamps
     end
   end
