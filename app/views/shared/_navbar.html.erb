@@ -9,11 +9,6 @@
     <ul class="navbar-sign-parent-div-all">
       <div class="navbar-sign-child-div-all">
         <% if user_signed_in? %>
-            <li>
-              <div class ="spotify">
-            <%# <iframe src="https://open.spotify.com/embed/playlist/5n0ztYk1VgAfkwKuDP4EQV?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> %>
-              </div>
-            </li>
             <li class="navbar-design-child-div-all">
               <span class="navbar-icon-media-text"><%= link_to "Browse Galleries", galleries_path %></span>
               <span class="navbar-icon-media-icon"><%= link_to galleries_path do %><i class="fas fa-compass"><h6>BROWSE</h6></i><% end %></span>
