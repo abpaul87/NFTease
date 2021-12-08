@@ -62,3 +62,20 @@
     color: $gold-light;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .this-is-the-about-us-page a{
+    font-size: 17px;
+  }
+  .footer-main-div{
+    h1{
+      font-size: 17px;
+    }
+    h2{
+      font-size: 15px;
+    }
+  }
+  .logo-footer-main-div{
+    flex-direction: column;
+  }
+}

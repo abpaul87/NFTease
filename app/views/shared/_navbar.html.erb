@@ -23,8 +23,8 @@
               <span class="navbar-icon-media-icon"><%= link_to dashboard_path do %><i class="fas fa-tools"><h6>MY GALLERY</h6></i><% end %></span>
             </li>
             <li class="navbar-design-child-div-all">
-              <span class="navbar-icon-media-text"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
-              <span class="navbar-icon-media-icon"><%= link_to destroy_user_session_path, method: :delete do %><i class="fas fa-sign-out-alt"><h6>SIGN OUT</h6></i><% end %></span>
+              <%# <span class="navbar-icon-media-text"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></span>
+              <span class="navbar-icon-media-icon-sign-out"><%= link_to destroy_user_session_path, method: :delete do %><i class="fas fa-sign-out-alt"><h6>SIGN OUT</h6></i><% end %></span>
             </li>
         <% else %>
         <%# replace the piece of code bellow between the <li> tags %>
@@ -37,8 +37,8 @@
             <span class="navbar-icon-media-icon"><%= link_to new_user_session_path do %><i class="fas fa-user-astronaut"><h6>LOGIN</h6></i><% end %></span>
           </li>
           <li class="navbar-design-child-div-all">
-            <span class="navbar-icon-media-text"><%= link_to "Sign-Up", new_user_registration_path %></span>
-            <span class="navbar-icon-media-icon"><%= link_to new_user_registration_path do %><i class="fas fa-user-plus"><h6>SIGN UP</h6></i><% end %></span>
+            <%# <span class="navbar-icon-media-text"><%= link_to "Sign-Up", new_user_registration_path %></span>
+            <span class="navbar-icon-media-icon-sign-out"><%= link_to new_user_registration_path do %><i class="fas fa-user-plus"><h6>SIGN UP</h6></i><% end %></span>
           </li>
         <% end %>
         </div>
