@@ -16,7 +16,7 @@
   <% end %>
   <div class="public-gallery-container" style="display:none;" id="public-gallery-container">
     <div class="dash-main-content">
-      <%= audio_tag "elevatormus.mp3", controls: true, loop: true, id: "audio" %>
+      <%= audio_check(@gallery) %>
       <div class="current-gallery">
         <h1><%=@gallery.name%></h1>
         <div class="public-cards">
