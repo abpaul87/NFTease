@@ -27,6 +27,6 @@ class PagesController < ApplicationController
     phillip = { name: "Jan Phillip Sommerfeld", image: phillipimg, desc: phillipdesc, position: "CTO" }
     nuno = { name: "Nuno Dantas da Costa", image: nunoimg, desc: nunodesc, position: "CCO" }
     flynn = { name: "Flynn Washington", image: flynnimg, desc: flynndesc, position: "CDO" }
-    @nfteam = [alex, phillip, flynn, nuno]
+    @nfteam = [alex, phillip, nuno, flynn]
   end
 end
