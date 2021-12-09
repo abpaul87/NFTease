@@ -10,12 +10,13 @@
     <div class="nft-modal-like-1">
       <%=link_to like_toggle_path(nft), method: :post do %>
         <div class="nft-modal-like" style="z-index:100;">
-          <%# <button class="button-like-img-nft">like <i class="fas fa-heart" style="color: #781f19;"><%  </i></button> %>
+        <% if user_signed_in? %>
           <% if nft.likes.where(user_id: current_user.id).empty? %>
             <button class="like-button2"></button>
           <% else %>
             <button class="like-button2 liked"></button>
           <% end %>
+        <% end %>
         </div>
       <%end%>
     </div>
