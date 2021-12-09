@@ -1,13 +1,17 @@
 <div class="modal fade" id="nft-show-<%=nft.id%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document" style="width:0px;0px;">
+  <div class="modal-dialog" role="document">
   </div>
   <div class = "nft-modal-content" >
     <div class="nft-modal-close">
-      <button type="button" class="notowhitebtn" data-dismiss="modal">
+      <button type="button" class="notowhitebtn" data-dismiss="nft-show-<%=nft.id%>">
         <i class="fas fa-times-circle"></i>
       </button>
     </div>
-    <button class="button-like-img-nft">like <i class="fas fa-heart" style="color: #781f19;"></i></button>
+
+    <div class="nft-modal-like">
+      <button class="button-like-img-nft">like <i class="fas fa-heart" style="color: #781f19;"><%  %></i></button>
+    </div>
+
     <div class = "nft-modal_imagecontent">
       <div class="nft-modal_image">
         <%= image_tag nft.image_url %>
@@ -18,7 +22,7 @@
         <div class = "nft-modal_text">
           <h2> <%= nft.token_name %></h2>
           <h3 id="collectionName"> <%= nft.collection_name %></h3>
-          <p style="width: 85%; word-wrap: break-word;"> <%= nft.token_description %></p>
+          <p style="width: 85%; word-wrap: break-word;"> <%= truncate(nft.token_description, length: 520) %></p>
           <h3  id="modal-content-h3"> Owned by: </h3>
           <p> <%= nft.current_owner %></p>
           <h3  id="modal-content-h3"> Created by: </h3>
@@ -40,22 +44,4 @@
       </div>
     </div>
   </div>
-
-  <%#<div class="modal fade" id="comment-show-<%#=@comment.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document" style="width:0px;0px;">
-    </div>
-    <div class="card my-1">
-      <div class="card-body">
-        <p class="font-weight-bold">Comments</p>
-        <%#= form_with(model: [nft, nft.comments.build]) do |f|
-          <div class="form-group">
-            <%#= f.label 'New comment' %>
-            <%#= f.text_area :body, class: 'form-control'
-          </div>
-          <%= f.submit 'Submit', class: 'btn btn-primary'
-        <% end %>
-        <%#= render nft.comments
-      </div>
-    </div>
-  </div> %>
 </div>
