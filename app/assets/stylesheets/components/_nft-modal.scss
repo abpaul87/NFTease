@@ -165,7 +165,7 @@
   border-radius: 20px;
     .nft-modal-like-1{
       position: absolute;
-      bottom: 12%;
+      bottom: 5%;
       left: 45%;
     }
     .nft-modal-shared{
@@ -335,13 +335,13 @@
     background: linear-gradient(to bottom, $show-card-top, $show-card-bottom);
     border-radius: 20px;
     .nft-modal-like-1{
-      top: 48%;
+      bottom: 48%;
       left: 10%;
       .like-button2::before{
-        font-size: 1.7rem;
+        font-size: 2rem;
       }
       .like-button2::after{
-        font-size: 2rem;
+        font-size: 2.4rem;
       }
     }
   }
@@ -365,9 +365,8 @@
       font-size: 25px;
       }
     }
-    // .nft-modal-like{/////////-----------------------------------------------------------------------------------------------------------------------------------
 
-    // }
+
     .nft-modal_imagecontent{//// -----------------------------image width-height-styling--------------///
       width: 100%;
       max-height: 320px;
@@ -419,40 +418,15 @@
   }
 }
 
-
-$red2: #ff3252;
-
-
-.like-button2 {
-  display: inline-block;
-  position: relative;
-  font-size: 32px;
-  cursor: pointer;
-
-  // border: 1px solid black;
-  &::before {
-    font-size: 2.4em;
-    color: #000;
-    content: '♥';
-    text-shadow: 0 0 5px $gold-light;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+//////// -----------------------fast heart------
+.nft-modal-like{
+  i{
+    color: black;
   }
-
-  &::after {
-    font-size: 2.7em;
-    color: $red2;
-    content: '♥';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.2s;
-  }
-
-  &.liked::after {
-    transform: translate(-50%, -50%) scale(1.1);
+  .liked{
+    color: #B33F40;
+    z-index: 30;
+    transform: scale(1.1);
   }
 }
+////////------------------------------
