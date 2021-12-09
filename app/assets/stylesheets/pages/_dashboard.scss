@@ -8,7 +8,7 @@
 .current-gallery-edit-button{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   button{
     font-size: 17px;
   }
@@ -231,9 +231,6 @@ a:hover{
         margin-bottom: 10px;
       }
     }
-  }
-  .current-gallery-edit-button{
-    align-items: flex-start;
   }
   .current-gallery{
     // padding-top: 15px;

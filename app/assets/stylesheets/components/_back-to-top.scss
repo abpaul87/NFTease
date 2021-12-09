@@ -1,0 +1,17 @@
+#btn-back-to-top {
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  display: none;
+  border-radius: 50%;
+  i{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #btn-back-to-top {
+    bottom: 4%;
+    right: 2%;
+  }
+}
