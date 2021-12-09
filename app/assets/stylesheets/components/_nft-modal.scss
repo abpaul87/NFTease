@@ -163,37 +163,21 @@
 
   background: linear-gradient(to bottom, $show-card-top, $show-card-bottom);
   border-radius: 20px;
-  .nft-modal-like{
-    position: absolute;
-    bottom: 5%;
-    left: 40%;
-    .button-like-img-nft {
-      z-index: 10;
-      padding: 1px 10px;
-      border-radius: 12px;
-      background: transparent;
-      border: 2px solid $black-dark;
-      font-size: 15px;
-      font-family: 'VT323', monospace;
-      color: $black-dark;
-      transition: 0.3s ease-in;
-        i{
-        color: $black-dark;
-        font-size: 15px;
-        padding: 1px 3px;
-        margin: 0;
-        }
+    .nft-modal-like-1{
+      position: absolute;
+      bottom: 12%;
+      left: 45%;
     }
     .nft-modal-shared{
       position: absolute;
       top: 0;
       right: 0;
     }
-  }
   .nft-modal-opensea{
     position: absolute;
     top: 85%;
     right: 3%;
+    z-index: 30;
     display: flex;
     ////Opensea button and share button
     #buttons-OS-S-bottom{
@@ -350,9 +334,15 @@
 
     background: linear-gradient(to bottom, $show-card-top, $show-card-bottom);
     border-radius: 20px;
-    .nft-modal-like{
-      top: 3%;
-      left: 75%;
+    .nft-modal-like-1{
+      top: 48%;
+      left: 10%;
+      .like-button2::before{
+        font-size: 1.7rem;
+      }
+      .like-button2::after{
+        font-size: 2rem;
+      }
     }
   }
   .nft-modal-content .nft-modal-opensea{
@@ -444,6 +434,7 @@ $red2: #ff3252;
     font-size: 3em;
     color: #000;
     content: '♥';
+    text-shadow: 0 0 10px $gold-light;
     position: absolute;
     left: 50%;
     top: 50%;
