@@ -42,6 +42,22 @@ class GalleriesController < ApplicationController
     opensea_pull
     @nfts_added = current_user.nfts.where(gallery: @gallery).order(gallery_order: :asc)
     @nfts_available = current_user.nfts.where(gallery: nil)
+    @length = @nfts_available.length
+    current = {}
+    array = []
+    @nfts_available.each do |item|
+      array << item
+    end
+    array.each_with_index do |element, index|
+      net = 0
+      if index == @length - 1
+        net = index - 1
+      else
+        net = index + 1
+      end
+      current[element] = { current: index, other: net }
+    end
+    @finito = current
   end
 
   def update
