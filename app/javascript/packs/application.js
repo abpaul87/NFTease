@@ -38,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initSortable();
   copyingText();
   scrollingAnimation();
-  // scrollToTop();
+  scrollToTop();
   const landing = document.querySelector('#blob');
   if (landing) {
     init();
