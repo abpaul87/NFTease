@@ -13,6 +13,8 @@ import { scrollingAnimation } from './scrolling'
 import { myFunction, showPage } from './preloader';
 import { autoPlay } from '../plugins/autoPlay';
 import { heart } from './like-button2';
+import { scrollToTop } from './top-button'
+
 
 
 Rails.start()
@@ -39,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   copyingText();
   scrollingAnimation();
   heart();
+  scrollToTop();
   const landing = document.querySelector('#blob');
   if (landing) {
     init();

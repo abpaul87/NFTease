@@ -29,7 +29,7 @@
         <div class = "nft-modal_text">
           <h2> <%= nft.token_name %></h2>
           <h3 id="collectionName"> <%= nft.collection_name %></h3>
-          <p style="width: 85%; word-wrap: break-word;"> <%= truncate(nft.token_description, length: 520) %></p>
+          <p style="width: 85%; word-wrap: break-word;"> <%= truncate(nft.token_description, length: 300) %></p>
           <h3  id="modal-content-h3"> Owned by: </h3>
           <p> <%= nft.current_owner %></p>
           <h3  id="modal-content-h3"> Created by: </h3>
