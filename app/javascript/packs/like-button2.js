@@ -5,7 +5,8 @@ export const heart = () => {
 
   hearts.forEach((heart)=> {
     heart.addEventListener('click', (e) => {
-  e.currentTarget.classList.toggle('liked');
-  })
+      e.currentTarget.classList.toggle('liked');
+      console.log(e.currentTarget.classList);
+      })
   });
 }

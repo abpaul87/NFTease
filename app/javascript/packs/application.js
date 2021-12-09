@@ -42,7 +42,6 @@ document.addEventListener('turbolinks:load', () => {
   scrollingAnimation();
   formsubmit();
   heart();
-  scrollToTop();
   const landing = document.querySelector('#blob');
   if (landing) {
     init();
@@ -50,5 +49,9 @@ document.addEventListener('turbolinks:load', () => {
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     myFunction();
+  }
+  const top = document.getElementById('btn-back-to-top');
+  if (top) {
+    scrollToTop();
   }
 });

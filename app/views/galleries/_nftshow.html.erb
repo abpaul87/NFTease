@@ -12,9 +12,11 @@
         <div class="nft-modal-like" style="z-index:100;">
         <% if user_signed_in? %>
           <% if nft.likes.where(user_id: current_user.id).empty? %>
-            <button class="like-button2"></button>
+            <%# <button class="like-button2"></button> %>
+              <i class="fas fa-heart like-button2"></i>
           <% else %>
-            <button class="like-button2 liked"></button>
+              <i class="fas fa-heart like-button2 liked"></i>
+            <%# <button class="like-button2 liked"></button> %>
           <% end %>
         <% end %>
         </div>
