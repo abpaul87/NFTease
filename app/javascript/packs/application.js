@@ -12,6 +12,7 @@ import { copyingText } from './shareBtn';
 import { scrollingAnimation } from './scrolling'
 import { myFunction, showPage } from './preloader';
 import { autoPlay } from '../plugins/autoPlay';
+import { scrollToTop } from './top-button'
 
 
 Rails.start()
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initSortable();
   copyingText();
   scrollingAnimation();
+  // scrollToTop();
   const landing = document.querySelector('#blob');
   if (landing) {
     init();
