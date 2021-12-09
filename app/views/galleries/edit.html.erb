@@ -1,10 +1,11 @@
+
 <button id="back_button"><i class="fas fa-arrow-left"></i><%= link_to "Go Back", :back %></button>
 
 <div class = "dash-container" style="margin-top: 25px;">
       <h2 style="text-align: center;"><%= @gallery.name %></h2>
     </div>
   <div class="top-div-edit-page">
-    <button type="button" class="btn btn-primary edit-gallery-optioins-btn" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-primary edit-gallery-optioins-btn" data-toggle="modal" data-target="#exampleModal" data-remote="true">
       Gallery Options <i class="fas fa-cogs" style="margin-left: 5px;"></i>
     </button>
 
