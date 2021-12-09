@@ -45,7 +45,6 @@
   position: relative;
   height: fit-content;
   width: 50%;
-
   button {
   position: absolute;
   bottom: 3%;
@@ -141,28 +140,6 @@
 #p-content-h3{
   margin-bottom: 4px;
 }
-////Opensea button and share button
-#buttons-OS-S-bottom{
-  position: absolute;
-  bottom: 5%;
-  right: 3%;
-  .button {
-  padding: 1px 10px;
-  margin-left: 10px;
-  border-radius: 12px;
-  background: transparent;
-  border: 2px solid $gold-light;
-  font-size: 15px;
-  font-family: 'VT323', monospace;
-  color: $gold-light;
-  transition: 0.3s ease-in-out;
-  }
-  .button:hover{
-  border: 2px solid transparent;
-  background: $gold-light;
-  color: $black-dark;
-  }
-}
 /////Arrows on the side of the card div
 .parent_show_container_nft_content{
   i{
@@ -175,10 +152,9 @@
 
 //////------------------------------CSS FOR THE MODAL (NEW SHOW PAGE) -------------------------///////
 .nft-modal-content {
-  width:90%;
-  margin-left:5%;
-  margin-top:5%;
-  max-height:80vh;
+  width:80%;
+  margin:7% auto 0;
+  max-height:70vh;
   overflow:hidden;
   display: flex;
   align-items: center;
@@ -207,6 +183,36 @@
         padding: 1px 3px;
         margin: 0;
         }
+    }
+    .nft-modal-shared{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .nft-modal-opensea{
+    position: absolute;
+    top: 85%;
+    right: 3%;
+    display: flex;
+    ////Opensea button and share button
+    #buttons-OS-S-bottom{
+      .button {
+        padding: 1px 10px;
+        margin-left: 10px;
+        border-radius: 12px;
+        background: transparent;
+        border: 2px solid $gold-light;
+        font-size: 15px;
+        font-family: 'VT323', monospace;
+        color: $gold-light;
+        transition: 0.3s ease-in-out;
+      }
+      .button:hover{
+        border: 2px solid transparent;
+        background: $gold-light;
+        color: $black-dark;
+      }
     }
   }
 
@@ -253,9 +259,12 @@
   height: fit-content;
   width: 50%;
   display: flex;
+  min-height:550px;
+  max-height: 550px;
   justify-content: space-between;
   align-items: flex-end;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 .nft-modal_textcontent{
@@ -345,7 +354,11 @@
       top: 3%;
       left: 75%;
     }
-    }
+  }
+  .nft-modal-content .nft-modal-opensea{
+    top: 50%;
+    z-index: 20;
+  }
     .button-like-img-nft:hover{
     border: 2px solid transparent;
     background: $gold-light;
@@ -395,6 +408,8 @@
     justify-content: space-between;
     align-items: flex-end;
     flex-direction: column;
+    min-height: 300px;
+    max-height: 300px;
   }
   .nft-modal_text{
     #collectionName{
@@ -407,10 +422,6 @@
     p{
       margin: 0 0 0 10px;
     }
-  }
-  #buttons-OS-S-bottom{  ///---------------- share and open sea buttons---------------//
-    top: -15%;
-    left: 0;
   }
   #audio{
     width: 120px;
