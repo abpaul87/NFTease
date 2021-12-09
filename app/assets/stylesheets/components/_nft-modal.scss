@@ -335,7 +335,7 @@
     background: linear-gradient(to bottom, $show-card-top, $show-card-bottom);
     border-radius: 20px;
     .nft-modal-like-1{
-      bottom: 48%;
+      bottom: 50%;
       left: 10%;
       .like-button2::before{
         font-size: 2rem;
@@ -346,7 +346,7 @@
     }
   }
   .nft-modal-content .nft-modal-opensea{
-    top: 48%;
+    top: 46%;
     z-index: 20;
   }
     .button-like-img-nft:hover{

@@ -25,12 +25,12 @@
   width: 40%;
   height: 80%;
 
-  background: rgba( 255, 255, 255, 0.60 );
-  box-shadow: 0 8px 32px 0 rgba( 255, 255, 255, 0.37 );
+  background: rgba( 0, 0, 0, 0.3);
+  // box-shadow: 0 8px 32px 0 rgba( 0, 0, 0, 0.37 );
   backdrop-filter: blur( 3px );
   -webkit-backdrop-filter: blur( 3px );
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  border: 1px solid rgba( 0, 0, 0, 0.7 );
 }
 .div-form-parent-child-signin img{
   width: 10%;
@@ -113,8 +113,8 @@
 }
 .actions-signin input:hover{
   background: transparent;
-  color: $black-dark;
-  border: 2px solid $black-dark;
+  color: $white;
+  border: 2px solid $white;
 }
 
 //login button
@@ -122,9 +122,9 @@
   padding: 2px 30px;
   background: transparent;
   border-radius: 10px;
-  border: 2px solid $black-dark;
+  border: 2px solid $white;
   text-decoration: none;
-  color: $black-dark;
+  color: $white;
 
   transition: var(--transition1);
 }
