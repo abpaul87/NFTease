@@ -346,7 +346,7 @@
     }
   }
   .nft-modal-content .nft-modal-opensea{
-    top: 50%;
+    top: 48%;
     z-index: 20;
   }
     .button-like-img-nft:hover{
@@ -431,10 +431,10 @@ $red2: #ff3252;
 
   // border: 1px solid black;
   &::before {
-    font-size: 3em;
+    font-size: 2.4em;
     color: #000;
     content: '♥';
-    text-shadow: 0 0 10px $gold-light;
+    text-shadow: 0 0 5px $gold-light;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -442,7 +442,7 @@ $red2: #ff3252;
   }
 
   &::after {
-    font-size: 3em;
+    font-size: 2.7em;
     color: $red2;
     content: '♥';
     position: absolute;
