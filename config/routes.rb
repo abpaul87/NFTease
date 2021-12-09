@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard"
   get "aboutus", to: "pages#aboutus"
+  post "/:nft_id/like_toggle", to: "likes#like_toggle", as: "like_toggle"
 
   resources :galleries do
     member do
@@ -14,9 +15,6 @@ Rails.application.routes.draw do
     end
 
     resources :nfts, only: %i[index show edit update]
-  end
-  resources :nfts do
-    resources :comments
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

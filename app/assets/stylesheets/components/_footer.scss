@@ -13,7 +13,9 @@
   background-color: #333;
 }
 
-
+.this-is-the-about-us-page{
+  width: 9%;
+}
 .this-is-the-about-us-page a{
   color: $white;
   font-size: 25px;
@@ -53,6 +55,7 @@
   font-size: 14px;
 
   i{
+    font-size: 20px;
     color: $white;
     margin: 0 10px;
     transition: 0.4s;
@@ -65,6 +68,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .this-is-the-about-us-page{
+  width: 15%;
+  }
   .this-is-the-about-us-page a{
     font-size: 17px;
   }
