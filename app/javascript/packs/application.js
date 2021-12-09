@@ -12,6 +12,7 @@ import { copyingText } from './shareBtn';
 import { scrollingAnimation } from './scrolling'
 import { myFunction, showPage } from './preloader';
 import { autoPlay } from '../plugins/autoPlay';
+import { formsubmit} from "../plugins/form_submit"
 
 
 Rails.start()
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initSortable();
   copyingText();
   scrollingAnimation();
+  formsubmit();
   const landing = document.querySelector('#blob');
   if (landing) {
     init();
