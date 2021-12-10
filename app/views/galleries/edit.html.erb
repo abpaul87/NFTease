@@ -4,22 +4,24 @@
 <div class = "dash-container" style="margin-top: 25px;">
       <h2 style="text-align: center;"><%= @gallery.name %></h2>
     </div>
-  <div class="top-div-edit-page">
-    <button type="button" class="btn btn-primary edit-gallery-optioins-btn" data-toggle="modal" data-target="#exampleModal" data-remote="true">
-      Gallery Options <i class="fas fa-cogs" style="margin-left: 5px;"></i>
-    </button>
-
-    <%= render "form", gallery: @gallery %>
-
-    <div class="view-gallery-button-edit">
-      <%=link_to gallery_path(@gallery) do %>
-        <button>View Public Gallery</button>
-      <% end %>
-    </div>
-  </div>
     <div class="gallery-edit-section-header">
-      <h2>Current Gallery</h2>
-      <p>Add, remove, and re-order to craft the perfect gallery. Just drag & drop to re-order.</p>
+      <div style="width: 100%;">
+        <h2>Current Gallery</h2>
+        <p>Add, remove, and re-order to craft the perfect gallery. Just drag & drop to re-order.</p>
+      </div>
+      <div class="top-div-edit-page">
+        <button type="button" class="btn btn-primary edit-gallery-optioins-btn" data-toggle="modal" data-target="#exampleModal" data-remote="true">
+          Gallery Options <i class="fas fa-cogs" style="margin-left: 5px;"></i>
+        </button>
+
+        <%= render "form", gallery: @gallery %>
+
+        <div class="view-gallery-button-edit">
+          <%=link_to gallery_path(@gallery) do %>
+            <button>View Public Gallery</button>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="cards itemchosens" data-update-order-url="<%= update_order_gallery_path(@gallery) %>">
       <%@nfts_added.each do |nft| %>

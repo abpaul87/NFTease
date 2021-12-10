@@ -4,6 +4,11 @@
   <%# <div class="dash-main-content"> %>
     <div class="current-gallery">
       <h1><%=truncate(@gallery.name, length: 100)%></h1>
+    <div class="gallery-edit-section-header">
+    <div style="width: 100%;">
+      <h2>Current Gallery</h2>
+      <p>Click edit to adjust gallery settings and which NFTs display publicly.</p>
+    </div>
       <div class="top-div-edit-page">
         <%=link_to edit_gallery_path(@gallery) do%>
           <div class="current-gallery-edit-button">
@@ -15,10 +20,7 @@
             <button>View Public Gallery</button>
           <% end %>
         </div>
-    </div>
-    <div class="gallery-edit-section-header">
-      <h2>Current Gallery</h2>
-      <p>Click edit to adjust gallery settings and which NFTs display publicly.</p>
+      </div>
     </div>
       <div class="cards">
         <% if !@nfts.nil? %>
