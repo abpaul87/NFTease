@@ -9,6 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-right: 50px;
   button{
     font-size: 17px;
   }
@@ -30,6 +31,10 @@
   transition: 1s;
   height: 100%;
   margin-top: 10px;
+  }
+  h2{
+    margin-bottom: 0;
+    margin-top: 5px;
   }
 }
 a:hover{

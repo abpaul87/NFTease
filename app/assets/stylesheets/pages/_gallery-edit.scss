@@ -1,8 +1,17 @@
 .top-div-edit-page{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 70%;
   margin: 25px auto 0;
+  button{
+    height: 40px;
+    width: 150px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    font-family: 'IBM Plex Sans';
+    padding: 5px 0;
+    color: $gold-light;
+  }
 }
 
 .edit-gallery-optioins-btn{
@@ -90,11 +99,11 @@
 }
 
 .gallery-edit-section-header {
+  display: flex;
+  // flex-direction: column;
   max-width: 1200px;
   width: 95%;
-  // margin-left: 20px;
   margin:30px auto;
-  // padding-left: 20px;
   color: $white;
   p {
     font-size: 20px;
@@ -113,6 +122,7 @@
     width: 100%;
     justify-content: space-between;
     padding: 0 5px;
+    margin: 0 auto 20px;
   }
   .edit-gallery-optioins-btn{
     width: 47%;
@@ -123,6 +133,7 @@
     justify-content: center;
   }
   .gallery-edit-section-header{
+    flex-direction: column-reverse;
     p{
       font-size: 15px;
     }

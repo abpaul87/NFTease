@@ -261,6 +261,9 @@
 
 
 @media only screen and (max-width: 600px) {
+  .div-form-parent{
+    height: 85vh;
+  }
   .div-form-parent-child{
     width: 80%;
     height: 90%;
@@ -274,6 +277,11 @@
     margin: 15px 0;
     input{
       width: 260px;
+    }
+  }
+  .div-form-child{
+    .actions {
+      margin-top: 50px;
     }
   }
 }
