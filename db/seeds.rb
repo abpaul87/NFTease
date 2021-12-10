@@ -4,6 +4,7 @@
 require 'open-uri'
 
 puts 'starting deletion'
+Like.destroy_all
 Nft.destroy_all
 Gallery.destroy_all
 User.destroy_all
