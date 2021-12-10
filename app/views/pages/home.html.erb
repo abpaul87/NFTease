@@ -40,7 +40,7 @@
 
 <div class="home-feature-nft-main-div">
   <% @galleries.each do |gallery| %>
-   <% if gallery.nfts.present? %>
+    <% if gallery.nfts.present? %>
     <%= link_to gallery_path(gallery) do %>
       <div class="home-feature-nft-parent-div">
           <% gallery1 = gallery.nfts.first.image_url_small %>

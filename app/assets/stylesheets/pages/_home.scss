@@ -161,14 +161,14 @@ $featureMesure: 190px;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(208,166,91, 0.3);
 
-  animation: feature-gallery 10s linear infinite;
+  animation: feature-gallery 30s infinite ease-in-out alternate;
 }
 .home-feature-nft-main-div:hover{
   animation-play-state: paused;
 }
 @keyframes feature-gallery {
-  0% { left: 0; }
-  100% { left: -100%; }
+  0% { transform:translateX(0%); }
+	100% { transform:translateX(-760%); }
 }
 
 .home-feature-image-div{
@@ -227,7 +227,9 @@ $featureMesure: 190px;
   .content-text-home-landing-parent {
   width: 90%;
   }
-
+  .home-feature-nft-parent-div{
+  animation: feature-gallery 30s linear infinite;
+}
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
