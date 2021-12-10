@@ -4,9 +4,9 @@
 require 'open-uri'
 
 puts 'starting deletion'
-Nft.delete_all
-Gallery.delete_all
-User.delete_all
+Nft.destroy_all
+Gallery.destroy_all
+User.destroy_all
 puts "deleting..."
 
 new_user1 = User.create(
