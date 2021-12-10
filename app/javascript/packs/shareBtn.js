@@ -5,9 +5,9 @@ import 'tippy.js/dist/tippy.css';
 export const copyingText = () => {
   const copyBtn = document.querySelector("#shareButtonShow")
 
-  // if (!copyBtn) {
-  //   return;
-  // }
+  if (!copyBtn) {
+    return;
+  }
 
   copyBtn.addEventListener('click', (event) => {
     console.log(copyBtn.dataset.url);
